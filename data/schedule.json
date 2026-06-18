@@ -349,8 +349,9 @@
       "from": "2026-06-20T21:00:00-07:00",
       "to": "2026-06-20T18:30:00-07:00",
       "newLocalTime": "Buenos Aires 22:30-23:00 on Jun 20",
-      "newParticipantTime": "China 09:30-10:00 on Jun 21",
-      "reason": "Original is Buenos Aires 01:00-01:30. Moving 2.5 hours earlier lands in Steve's preferred evening window and is a clean China morning slot."
+      "participantLabel": "Pacific participants",
+      "newParticipantTime": "PT 18:30-19:00 on Jun 20",
+      "reason": "Participants are in U.S. Pacific time. Moving from PT 21:00 to PT 18:30 keeps the West Coast side reasonable while avoiding Steve's Buenos Aires 01:00-01:30 slot."
     },
     {
       "id": "proposal-move-haoqing-20260622",
