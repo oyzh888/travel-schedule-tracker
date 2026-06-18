@@ -113,6 +113,16 @@
       "notes": "Trip.com says no need to collect and re-check baggage during ADD transfer."
     }
   ],
+  "rules": {
+    "normalLocalWindow": "08:00-24:00",
+    "toleratedLocalWindow": "00:00-01:00",
+    "avoid": [
+      "in flight",
+      "within 10 minutes before boarding",
+      "03:00-05:00 local time"
+    ],
+    "strategy": "Minimize calendar changes first; prefer moving recurring or duplicate meetings only when needed."
+  },
   "meetings": [
     {
       "id": "task-cancel-xiaoyunque",
@@ -304,6 +314,144 @@
       "risk": "early",
       "recommendation": "too early if included in scope"
     }
+  ],
+  "proposals": [
+    {
+      "id": "proposal-merge-paw-20260618",
+      "priority": "low",
+      "eventId": "meeting-paw-20260618",
+      "eventTitle": "PAW Weekly Meeting",
+      "action": "skip",
+      "from": "2026-06-18T21:00:00-07:00",
+      "to": "",
+      "newLocalTime": "",
+      "reason": "This fully overlaps Steve / Wei / Suwandi / Dennis in MEX 22:00-23:00. Minimal-change option is to use one call/link instead of moving both."
+    },
+    {
+      "id": "proposal-move-aitist-weekly-20260619",
+      "priority": "medium",
+      "eventId": "meeting-aitist-weekly-20260619",
+      "eventTitle": "Aitist Weekly",
+      "action": "reschedule",
+      "from": "2026-06-19T22:00:00-07:00",
+      "to": "2026-06-19T20:30:00-07:00",
+      "newLocalTime": "Buenos Aires 00:30-01:00 on Jun 20",
+      "reason": "Original is Buenos Aires 02:00-02:30 after a long travel day. Moving 90 minutes earlier keeps it near the tolerated 00:00-01:00 band."
+    },
+    {
+      "id": "proposal-move-haoqing-20260622",
+      "priority": "medium",
+      "eventId": "meeting-haoqing-20260622",
+      "eventTitle": "sync haoqing",
+      "action": "reschedule",
+      "from": "2026-06-22T22:00:00-07:00",
+      "to": "2026-06-22T20:00:00-07:00",
+      "newLocalTime": "Rio 00:00-01:00 on Jun 23",
+      "reason": "Original is Rio 02:00-03:00. Moving it two hours earlier avoids the too-late zone while keeping the same date."
+    },
+    {
+      "id": "proposal-merge-paw-20260623",
+      "priority": "low",
+      "eventId": "meeting-paw-20260623",
+      "eventTitle": "PAW Weekly Meeting",
+      "action": "skip",
+      "from": "2026-06-23T20:00:00-07:00",
+      "to": "",
+      "newLocalTime": "",
+      "reason": "This overlaps Steve / Wei / Suwandi / Dennis at Rio 00:00-01:00. Minimal-change option is to treat one as duplicate and keep one call."
+    },
+    {
+      "id": "proposal-move-tech-sync-20260623",
+      "priority": "medium",
+      "eventId": "meeting-aitist-tech-20260623",
+      "eventTitle": "Aitist Tech Sync",
+      "action": "reschedule",
+      "from": "2026-06-23T22:00:00-07:00",
+      "to": "2026-06-23T21:10:00-07:00",
+      "newLocalTime": "Rio 01:10-01:40 on Jun 24",
+      "reason": "Original is Rio 02:00-02:30. Moving right after the Dennis/PAW block reduces lateness without changing the day."
+    },
+    {
+      "id": "proposal-move-dennis-20260625",
+      "priority": "high",
+      "eventId": "meeting-dennis-20260625",
+      "eventTitle": "Steve / Wei / Suwandi / Dennis",
+      "action": "reschedule",
+      "from": "2026-06-25T20:00:00-07:00",
+      "to": "2026-06-26T20:00:00-07:00",
+      "newLocalTime": "Shanghai 11:00-12:05 on Jun 27",
+      "reason": "Original is during ADD-PVG flight. Moving to the same PT hour one day later lands in a normal Shanghai late morning slot."
+    },
+    {
+      "id": "proposal-skip-paw-20260625",
+      "priority": "high",
+      "eventId": "meeting-paw-20260625",
+      "eventTitle": "PAW Weekly Meeting",
+      "action": "skip",
+      "from": "2026-06-25T20:00:00-07:00",
+      "to": "",
+      "newLocalTime": "",
+      "reason": "Original is during ADD-PVG flight and overlaps the Dennis/Wei/Suwandi meeting. Minimal-change option is to skip/delegate this duplicate instance."
+    },
+    {
+      "id": "proposal-move-haoqing2-20260625",
+      "priority": "high",
+      "eventId": "meeting-haoqing2-20260625",
+      "eventTitle": "sync haoqing2",
+      "action": "reschedule",
+      "from": "2026-06-25T22:00:00-07:00",
+      "to": "2026-06-26T21:05:00-07:00",
+      "newLocalTime": "Shanghai 12:05-13:05 on Jun 27",
+      "reason": "Original is during ADD-PVG flight. Proposed slot follows the moved Dennis block and avoids the 22:00 PT Aitist Weekly."
+    },
+    {
+      "id": "proposal-move-dennis-shanghai-20260626",
+      "priority": "medium",
+      "eventId": "meeting-dennis-shanghai-20260626",
+      "eventTitle": "Dennis in Shanghai | afternoon",
+      "action": "reschedule",
+      "from": "2026-06-26T14:00:00-07:00",
+      "to": "2026-06-26T23:00:00-07:00",
+      "newLocalTime": "Shanghai 14:00-15:00 on Jun 27",
+      "reason": "Original is Shanghai 05:00-06:00. Proposed slot matches the event title and keeps the meeting in Shanghai afternoon."
+    }
+  ],
+  "playWindows": [
+    {
+      "date": "2026-06-20",
+      "location": "Buenos Aires",
+      "window": "Morning through late evening",
+      "note": "No flight this day. Only Aitist Weekly late at night unless rescheduled earlier."
+    },
+    {
+      "date": "2026-06-21",
+      "location": "Buenos Aires / Rio",
+      "window": "Buenos Aires morning, Rio evening after arrival",
+      "note": "AEP flight departs 14:30 and arrives GIG 17:30."
+    },
+    {
+      "date": "2026-06-22",
+      "location": "Rio",
+      "window": "Daytime and evening before midnight",
+      "note": "Meetings start late PT, which is after midnight in Rio."
+    },
+    {
+      "date": "2026-06-23",
+      "location": "Rio",
+      "window": "Daytime through 23:00",
+      "note": "Sync Steve <> Hui starts at Rio 23:00."
+    },
+    {
+      "date": "2026-06-24",
+      "location": "Rio / Sao Paulo",
+      "window": "Sao Paulo late afternoon and evening",
+      "note": "GIG to CGH flight arrives 15:25."
+    },
+    {
+      "date": "2026-06-27",
+      "location": "Shanghai",
+      "window": "Afternoon after Aitist Weekly",
+      "note": "Aitist Weekly is Shanghai 13:00-13:30; proposed Dennis slot is 14:00-15:00."
+    }
   ]
 }
-

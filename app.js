@@ -18,6 +18,8 @@ const summary = document.querySelector("#summary");
 const eventSelect = document.querySelector("#event-select");
 const adjustmentForm = document.querySelector("#adjustment-form");
 const adjustmentsContainer = document.querySelector("#adjustments");
+const proposalsContainer = document.querySelector("#proposals");
+const playWindowsContainer = document.querySelector("#play-windows");
 
 init();
 
@@ -26,6 +28,8 @@ async function init() {
   state.schedule = await response.json();
   renderFilters();
   renderSummary();
+  renderProposals();
+  renderPlayWindows();
   renderTimeline();
   renderEventSelect();
   renderAdjustments();
@@ -42,6 +46,7 @@ function bindActions() {
     persistAdjustments();
     renderAdjustments();
   });
+  document.querySelector("#add-all-proposals").addEventListener("click", addAllProposals);
 }
 
 function renderFilters() {
@@ -60,14 +65,55 @@ function renderSummary() {
   const meetings = state.schedule.meetings.filter((event) => event.type === "meeting").length;
   const blocked = state.schedule.meetings.filter((event) => event.risk === "blocked").length;
   const overlap = state.schedule.meetings.filter((event) => event.risk === "overlap").length;
+  const proposals = state.schedule.proposals.length;
   const cards = [
     ["Travel blocks", travel],
     ["Meetings", meetings],
     ["Blocked", blocked],
-    ["Overlaps", overlap]
+    ["Overlaps", overlap],
+    ["Proposals", proposals]
   ];
   summary.innerHTML = cards
     .map(([label, value]) => `<article class="summary-card"><strong>${value}</strong><span>${label}</span></article>`)
+    .join("");
+}
+
+function renderProposals() {
+  proposalsContainer.innerHTML = state.schedule.proposals
+    .map((proposal) => {
+      const priority = proposal.priority || "medium";
+      return `
+        <article class="proposal-card ${priority}">
+          <div class="proposal-topline">
+            <span class="badge ${priority === "high" ? "blocked" : priority === "low" ? "low" : "late"}">${priority}</span>
+            <span>${proposal.action}</span>
+          </div>
+          <h3>${escapeHtml(proposal.eventTitle)}</h3>
+          <p class="proposal-time">${formatProposalTime(proposal)}</p>
+          <p>${escapeHtml(proposal.reason)}</p>
+          <button type="button" data-proposal-id="${proposal.id}" class="add-proposal">Add to Draft</button>
+        </article>
+      `;
+    })
+    .join("");
+
+  proposalsContainer.querySelectorAll(".add-proposal").forEach((button) => {
+    button.addEventListener("click", () => {
+      const proposal = state.schedule.proposals.find((item) => item.id === button.dataset.proposalId);
+      addProposal(proposal);
+    });
+  });
+}
+
+function renderPlayWindows() {
+  playWindowsContainer.innerHTML = state.schedule.playWindows
+    .map((item) => `
+      <article class="window-card">
+        <strong>${formatDate(item.date)} · ${escapeHtml(item.location)}</strong>
+        <span>${escapeHtml(item.window)}</span>
+        <p>${escapeHtml(item.note)}</p>
+      </article>
+    `)
     .join("");
 }
 
@@ -160,7 +206,10 @@ function travelDetail(event) {
 }
 
 function meetingDetail(event) {
-  return `${escapeHtml(event.localTimeLabel)} · ${escapeHtml(event.recommendation)}`;
+  return `
+    <span class="local-time">${escapeHtml(event.localTimeLabel)}</span>
+    <span>${escapeHtml(event.recommendation)}</span>
+  `;
 }
 
 function renderEventSelect() {
@@ -192,6 +241,29 @@ function handleAdjustmentSubmit(event) {
   persistAdjustments();
   adjustmentForm.reset();
   renderAdjustments();
+}
+
+function addProposal(proposal) {
+  const exists = state.adjustments.some((item) => item.proposalId === proposal.id);
+  if (exists) return;
+
+  state.adjustments.push({
+    proposalId: proposal.id,
+    eventId: proposal.eventId,
+    eventTitle: proposal.eventTitle,
+    action: proposal.action,
+    from: proposal.from,
+    to: proposal.to,
+    reason: proposal.reason,
+    createdAt: new Date().toISOString()
+  });
+
+  persistAdjustments();
+  renderAdjustments();
+}
+
+function addAllProposals() {
+  state.schedule.proposals.forEach(addProposal);
 }
 
 function renderAdjustments() {
@@ -244,6 +316,11 @@ function exportMarkdown() {
   download("schedule-adjustments.md", lines.join("\n"), "text/markdown");
 }
 
+function formatProposalTime(proposal) {
+  const to = proposal.to ? `${proposal.to}${proposal.newLocalTime ? ` · ${proposal.newLocalTime}` : ""}` : "no new time";
+  return `${proposal.from} -> ${to}`;
+}
+
 function download(filename, content, type) {
   const blob = new Blob([content], { type });
   const url = URL.createObjectURL(blob);
@@ -288,4 +365,3 @@ function escapeHtml(value) {
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#039;");
 }
-

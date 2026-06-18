@@ -34,6 +34,20 @@
           </div>
         </div>
         <div id="summary" class="summary-grid"></div>
+        <section class="diagnosis">
+          <div class="section-title">
+            <h2>Conflict Review & Proposals</h2>
+            <button id="add-all-proposals" class="primary" type="button">Add All Proposals</button>
+          </div>
+          <p class="diagnosis-note">Rule: prefer local 08:00-24:00, tolerate up to 01:00, avoid flight time and 03:00-05:00.</p>
+          <div id="proposals" class="proposal-grid"></div>
+        </section>
+        <section class="diagnosis">
+          <div class="section-title">
+            <h2>Possible Play Windows</h2>
+          </div>
+          <div id="play-windows" class="window-grid"></div>
+        </section>
         <div id="timeline" class="timeline"></div>
       </section>
 
@@ -94,4 +108,3 @@
     <script src="app.js" type="module"></script>
   </body>
 </html>
-
