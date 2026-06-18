@@ -20,6 +20,7 @@ const adjustmentForm = document.querySelector("#adjustment-form");
 const adjustmentsContainer = document.querySelector("#adjustments");
 const proposalsContainer = document.querySelector("#proposals");
 const playWindowsContainer = document.querySelector("#play-windows");
+const timeFocusContainer = document.querySelector("#time-focus");
 
 init();
 
@@ -28,6 +29,7 @@ async function init() {
   state.schedule = await response.json();
   renderFilters();
   renderSummary();
+  renderTimeFocus();
   renderProposals();
   renderPlayWindows();
   renderTimeline();
@@ -78,10 +80,62 @@ function renderSummary() {
     .join("");
 }
 
+function renderTimeFocus() {
+  const zones = [
+    {
+      label: "Calendar source",
+      date: "All meetings",
+      place: "Pacific Time",
+      offset: "PT / UTC-7",
+      note: "Original Google Calendar time"
+    },
+    {
+      label: "Layover",
+      date: "Jun 18-19",
+      place: "Mexico City",
+      offset: "UTC-6",
+      note: "Only matters for the MEX overnight layover"
+    },
+    {
+      label: "Argentina",
+      date: "Jun 19-21",
+      place: "Buenos Aires",
+      offset: "UTC-3",
+      note: "Primary check for first weekend meetings"
+    },
+    {
+      label: "Brazil",
+      date: "Jun 21-25",
+      place: "Rio / Sao Paulo",
+      offset: "UTC-3",
+      note: "Primary check for batch meeting changes"
+    },
+    {
+      label: "After flight",
+      date: "Jun 26-27",
+      place: "Shanghai",
+      offset: "UTC+8",
+      note: "Use after PVG arrival"
+    }
+  ];
+
+  timeFocusContainer.innerHTML = zones
+    .map((zone) => `
+      <article class="time-zone-card ${zone.label === "Brazil" || zone.label === "Argentina" ? "primary-zone" : ""}">
+        <span>${escapeHtml(zone.label)}</span>
+        <strong>${escapeHtml(zone.place)}</strong>
+        <div>${escapeHtml(zone.date)} · ${escapeHtml(zone.offset)}</div>
+        <p>${escapeHtml(zone.note)}</p>
+      </article>
+    `)
+    .join("");
+}
+
 function renderProposals() {
   proposalsContainer.innerHTML = state.schedule.proposals
     .map((proposal) => {
       const priority = proposal.priority || "medium";
+      const sourceEvent = state.schedule.meetings.find((event) => event.id === proposal.eventId);
       return `
         <article class="proposal-card ${priority}">
           <div class="proposal-topline">
@@ -89,7 +143,7 @@ function renderProposals() {
             <span>${proposal.action}</span>
           </div>
           <h3>${escapeHtml(proposal.eventTitle)}</h3>
-          <p class="proposal-time">${formatProposalTime(proposal)}</p>
+          ${renderProposalTime(proposal, sourceEvent)}
           <p>${escapeHtml(proposal.reason)}</p>
           <button type="button" data-proposal-id="${proposal.id}" class="add-proposal">Add to Draft</button>
         </article>
@@ -190,12 +244,27 @@ function renderEvent(event) {
 }
 
 function travelTime(event) {
-  if (event.type === "lodging") return `${event.from} -> ${event.to}`;
-  return `${formatTime(event.departLocal)} -> ${formatTime(event.arriveLocal)}`;
+  if (event.type === "lodging") {
+    return `
+      <span class="time-label">Stay dates</span>
+      <strong>${formatDate(event.from)} -> ${formatDate(event.to)}</strong>
+    `;
+  }
+  return `
+    <span class="time-label">${escapeHtml(event.from)} local</span>
+    <strong>${formatTime(event.departLocal)}</strong>
+    <span class="time-label">${escapeHtml(event.to)} local</span>
+    <strong>${formatTime(event.arriveLocal)}</strong>
+  `;
 }
 
 function meetingTime(event) {
-  return `${formatTime(event.startPT)} -> ${formatTime(event.endPT)} PT`;
+  return `
+    <span class="time-label">Calendar PT</span>
+    <strong>${formatDateTimePT(event.startPT)}-${formatTime(event.endPT)}</strong>
+    <span class="time-label">Travel local</span>
+    <strong>${escapeHtml(event.localTimeLabel)}</strong>
+  `;
 }
 
 function travelDetail(event) {
@@ -207,8 +276,7 @@ function travelDetail(event) {
 
 function meetingDetail(event) {
   return `
-    <span class="local-time">${escapeHtml(event.localTimeLabel)}</span>
-    <span>${escapeHtml(event.recommendation)}</span>
+    <span class="recommendation">${escapeHtml(event.recommendation)}</span>
   `;
 }
 
@@ -234,6 +302,8 @@ function handleAdjustmentSubmit(event) {
     action,
     from: selected.startPT,
     to,
+    fromDisplay: `${formatDateTimePT(selected.startPT)} PT · ${selected.localTimeLabel || "Local time not set"}`,
+    toDisplay: to ? `${formatDateTimePT(`${to}-07:00`)} PT · Local time TBD` : "No new time",
     reason,
     createdAt: new Date().toISOString()
   });
@@ -246,6 +316,7 @@ function handleAdjustmentSubmit(event) {
 function addProposal(proposal) {
   const exists = state.adjustments.some((item) => item.proposalId === proposal.id);
   if (exists) return;
+  const sourceEvent = state.schedule.meetings.find((event) => event.id === proposal.eventId);
 
   state.adjustments.push({
     proposalId: proposal.id,
@@ -254,6 +325,8 @@ function addProposal(proposal) {
     action: proposal.action,
     from: proposal.from,
     to: proposal.to,
+    fromDisplay: formatProposalFrom(proposal, sourceEvent),
+    toDisplay: formatProposalTo(proposal),
     reason: proposal.reason,
     createdAt: new Date().toISOString()
   });
@@ -278,7 +351,7 @@ function renderAdjustments() {
   state.adjustments.forEach((adjustment, index) => {
     const node = template.content.cloneNode(true);
     node.querySelector(".adjustment-title").textContent = adjustment.eventTitle;
-    node.querySelector(".adjustment-meta").textContent = `${adjustment.action}: ${adjustment.from} -> ${adjustment.to || "no new time"}`;
+    node.querySelector(".adjustment-meta").textContent = humanAdjustmentMeta(adjustment);
     node.querySelector(".adjustment-reason").textContent = adjustment.reason || "No reason added.";
     node.querySelector(".remove-adjustment").addEventListener("click", () => {
       state.adjustments.splice(index, 1);
@@ -307,8 +380,8 @@ function exportMarkdown() {
     state.adjustments.forEach((item) => {
       lines.push(`- ${item.eventTitle}`);
       lines.push(`  - Action: ${item.action}`);
-      lines.push(`  - From: ${item.from}`);
-      lines.push(`  - To: ${item.to || "TBD"}`);
+      lines.push(`  - From: ${item.fromDisplay || item.from}`);
+      lines.push(`  - To: ${item.toDisplay || item.to || "TBD"}`);
       lines.push(`  - Reason: ${item.reason || "TBD"}`);
     });
   }
@@ -316,9 +389,37 @@ function exportMarkdown() {
   download("schedule-adjustments.md", lines.join("\n"), "text/markdown");
 }
 
-function formatProposalTime(proposal) {
-  const to = proposal.to ? `${proposal.to}${proposal.newLocalTime ? ` · ${proposal.newLocalTime}` : ""}` : "no new time";
-  return `${proposal.from} -> ${to}`;
+function renderProposalTime(proposal, sourceEvent) {
+  return `
+    <div class="proposal-time-block">
+      <div>
+        <span>Current</span>
+        <strong>${escapeHtml(formatProposalFrom(proposal, sourceEvent))}</strong>
+      </div>
+      <div>
+        <span>Proposal</span>
+        <strong>${escapeHtml(formatProposalTo(proposal))}</strong>
+      </div>
+    </div>
+  `;
+}
+
+function formatProposalFrom(proposal, sourceEvent) {
+  const pt = formatDateTimePT(proposal.from);
+  const local = sourceEvent?.localTimeLabel || "Local time not set";
+  return `${pt} PT · ${local}`;
+}
+
+function formatProposalTo(proposal) {
+  if (!proposal.to) return "No new time";
+  const local = proposal.newLocalTime ? ` · ${proposal.newLocalTime}` : "";
+  return `${formatDateTimePT(proposal.to)} PT${local}`;
+}
+
+function humanAdjustmentMeta(adjustment) {
+  const from = adjustment.fromDisplay || adjustment.from;
+  const to = adjustment.toDisplay || adjustment.to || "No new time";
+  return `${adjustment.action}: ${from} -> ${to}`;
 }
 
 function download(filename, content, type) {
@@ -355,6 +456,19 @@ function formatTime(value) {
   if (!value) return "";
   const match = value.match(/T(\d{2}):(\d{2})/);
   return match ? `${match[1]}:${match[2]}` : value;
+}
+
+function formatDateTimePT(value) {
+  if (!value) return "";
+  const date = new Date(value);
+  return new Intl.DateTimeFormat("en-US", {
+    month: "short",
+    day: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+    hour12: false,
+    timeZone: "America/Los_Angeles"
+  }).format(date);
 }
 
 function escapeHtml(value) {

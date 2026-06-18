@@ -174,6 +174,54 @@ h2 {
   font-size: 13px;
 }
 
+.time-focus {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  display: grid;
+  gap: 12px;
+  margin-bottom: 18px;
+  padding: 14px;
+}
+
+.time-focus p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.time-focus-grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.time-zone-card {
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  display: grid;
+  gap: 3px;
+  padding: 10px;
+}
+
+.time-zone-card.primary-zone {
+  background: #ecfdf5;
+  border-color: #99f6e4;
+}
+
+.time-zone-card span,
+.time-zone-card div {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.time-zone-card strong {
+  font-size: 14px;
+}
+
+.time-zone-card p {
+  font-size: 12px;
+}
+
 .timeline {
   display: grid;
   gap: 10px;
@@ -209,7 +257,7 @@ h2 {
   border-bottom: 1px solid #edf0f4;
   display: grid;
   gap: 12px;
-  grid-template-columns: 128px 1fr auto;
+  grid-template-columns: minmax(210px, 240px) 1fr auto;
   padding: 12px;
 }
 
@@ -218,9 +266,22 @@ h2 {
 }
 
 .time {
-  color: var(--muted);
+  color: var(--ink);
+  display: grid;
   font-size: 13px;
-  white-space: nowrap;
+  gap: 2px;
+}
+
+.time strong {
+  font-size: 13px;
+  line-height: 1.25;
+}
+
+.time-label {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 760;
+  text-transform: uppercase;
 }
 
 .event-title {
@@ -233,10 +294,8 @@ h2 {
   margin-top: 2px;
 }
 
-.local-time {
-  color: var(--ink);
+.recommendation {
   display: block;
-  font-weight: 720;
 }
 
 .diagnosis {
@@ -312,6 +371,33 @@ h2 {
 .proposal-time {
   color: var(--ink) !important;
   font-weight: 680;
+}
+
+.proposal-time-block {
+  background: #f8fafc;
+  border: 1px solid #e8edf4;
+  border-radius: 8px;
+  display: grid;
+  gap: 7px;
+  padding: 9px;
+}
+
+.proposal-time-block div {
+  display: grid;
+  gap: 1px;
+}
+
+.proposal-time-block span {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 760;
+  text-transform: uppercase;
+}
+
+.proposal-time-block strong {
+  color: var(--ink);
+  font-size: 13px;
+  line-height: 1.35;
 }
 
 .window-grid {
@@ -434,7 +520,8 @@ textarea {
   }
 
   .proposal-grid,
-  .window-grid {
+  .window-grid,
+  .time-focus-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -450,7 +537,8 @@ textarea {
   }
 
   .proposal-grid,
-  .window-grid {
+  .window-grid,
+  .time-focus-grid {
     grid-template-columns: 1fr;
   }
 
