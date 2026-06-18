@@ -1,0 +1,143 @@
+{
+  "meta": {
+    "updatedAt": "2026-06-18T07:45:00Z",
+    "privacyNote": "Public page: no PNR, airline confirmation code, ticket number, passport, date of birth, or payment details.",
+    "status": "Known confirmed flight legs are included. Hong Kong to United States return flight details are pending confirmation."
+  },
+  "itineraries": [
+    {
+      "id": "itinerary-sfo-eze-aeromexico",
+      "title": "SFO to Buenos Aires via Mexico City",
+      "status": "confirmed",
+      "airline": "Aeromexico",
+      "checkInUrl": "https://www.aeromexico.com/en-us/check-in",
+      "checkInHint": "Use last name Ouyang plus reservation code or ticket number from the private Chase Travel email.",
+      "baggageNote": "Same Aeromexico itinerary. At SFO, verify the checked-bag tag says EZE. If it is tagged to EZE, do not collect checked baggage during the MEX layover.",
+      "borderNote": "Leaving MEX airport during the layover requires clearing Mexico immigration. Carry passport, valid U.S. visa or other Mexico-accepted entry document, and onward itinerary.",
+      "legs": [
+        {
+          "date": "2026-06-18",
+          "flightNumber": "AM669",
+          "from": "SFO",
+          "fromName": "San Francisco",
+          "to": "MEX",
+          "toName": "Mexico City",
+          "departLocal": "2026-06-18T14:50:00-07:00",
+          "arriveLocal": "2026-06-18T20:25:00-06:00",
+          "terminalHint": "Confirm SFO/MEX terminals on boarding pass; Aeromexico commonly uses MEX Terminal 2."
+        },
+        {
+          "date": "2026-06-19",
+          "flightNumber": "AM30",
+          "from": "MEX",
+          "fromName": "Mexico City",
+          "to": "EZE",
+          "toName": "Buenos Aires Ezeiza",
+          "departLocal": "2026-06-19T09:15:00-06:00",
+          "arriveLocal": "2026-06-19T21:25:00-03:00",
+          "layoverBefore": "12h50 in Mexico City"
+        }
+      ]
+    },
+    {
+      "id": "itinerary-argentina-brazil-gol",
+      "title": "Buenos Aires to Rio de Janeiro",
+      "status": "confirmed",
+      "airline": "GOL",
+      "checkInUrl": "https://www.voegol.com.br/en-US/nh/checkin",
+      "checkInHint": "Use the private GOL booking information from email/app. Check in near the airline's online check-in window.",
+      "baggageNote": "This is a city-to-city flight into Rio. Collect checked baggage at GIG before going to the hotel.",
+      "legs": [
+        {
+          "date": "2026-06-21",
+          "flightNumber": "G37609",
+          "from": "AEP",
+          "fromName": "Buenos Aires Aeroparque",
+          "to": "GIG",
+          "toName": "Rio de Janeiro Galeao",
+          "departLocal": "2026-06-21T14:30:00-03:00",
+          "arriveLocal": "2026-06-21T17:30:00-03:00",
+          "terminalHint": "Arrives at GIG Terminal 2 per itinerary notes."
+        }
+      ]
+    },
+    {
+      "id": "itinerary-rio-sao-paulo-gol",
+      "title": "Rio de Janeiro to Sao Paulo",
+      "status": "confirmed",
+      "airline": "GOL",
+      "checkInUrl": "https://www.voegol.com.br/en-US/nh/checkin",
+      "checkInHint": "Use the private GOL booking information from email/app.",
+      "baggageNote": "Domestic Brazil segment. Collect checked baggage at CGH after arrival.",
+      "legs": [
+        {
+          "date": "2026-06-24",
+          "flightNumber": "G31447",
+          "from": "GIG",
+          "fromName": "Rio de Janeiro Galeao",
+          "to": "CGH",
+          "toName": "Sao Paulo Congonhas",
+          "departLocal": "2026-06-24T14:20:00-03:00",
+          "arriveLocal": "2026-06-24T15:25:00-03:00",
+          "terminalHint": "Departs GIG Terminal 2 per itinerary notes."
+        }
+      ]
+    },
+    {
+      "id": "itinerary-sao-paulo-shanghai-ethiopian",
+      "title": "Sao Paulo to Shanghai via Addis Ababa",
+      "status": "confirmed",
+      "airline": "Ethiopian Airlines",
+      "checkInUrl": "https://dxcheckin.ethiopianairlines.com/dx/ETCI/",
+      "checkInHint": "Use the private Ethiopian/Trip.com booking information from email/app.",
+      "baggageNote": "Trip.com itinerary says no need to collect and re-check baggage during the ADD transfer. Confirm the checked-bag tag says PVG at GRU.",
+      "legs": [
+        {
+          "date": "2026-06-25",
+          "flightNumber": "ET507",
+          "from": "GRU",
+          "fromName": "Sao Paulo Guarulhos",
+          "to": "ADD",
+          "toName": "Addis Ababa",
+          "departLocal": "2026-06-25T01:45:00-03:00",
+          "arriveLocal": "2026-06-25T19:45:00+03:00",
+          "terminalHint": "Departs GRU Terminal 3 and arrives ADD Terminal 2 per itinerary notes."
+        },
+        {
+          "date": "2026-06-25",
+          "flightNumber": "ET684",
+          "from": "ADD",
+          "fromName": "Addis Ababa",
+          "to": "PVG",
+          "toName": "Shanghai Pudong",
+          "departLocal": "2026-06-25T23:30:00+03:00",
+          "arriveLocal": "2026-06-26T15:15:00+08:00",
+          "layoverBefore": "3h45 in Addis Ababa",
+          "terminalHint": "Departs ADD Terminal 2 and arrives PVG Terminal 2 per itinerary notes."
+        }
+      ]
+    },
+    {
+      "id": "itinerary-hong-kong-us-return",
+      "title": "Hong Kong to United States",
+      "status": "pending confirmation",
+      "airline": "TBD",
+      "checkInUrl": "",
+      "checkInHint": "No confirmed ticket details found in local records yet. Add airline, flight number, and departure time after Steve sends the final China plan or ticket.",
+      "baggageNote": "Keep U.S. entry documents and one clean flight outfit in carry-on.",
+      "legs": [
+        {
+          "date": "2026-07-05",
+          "flightNumber": "TBD",
+          "from": "HKG",
+          "fromName": "Hong Kong",
+          "to": "United States",
+          "toName": "TBD",
+          "departLocal": "",
+          "arriveLocal": "",
+          "terminalHint": "Pending confirmed ticket."
+        }
+      ]
+    }
+  ]
+}

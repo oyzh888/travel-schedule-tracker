@@ -1,6 +1,7 @@
 const state = {
   schedule: null,
   tripPlan: null,
+  flightDetails: null,
   filter: "all",
   adjustments: loadAdjustments()
 };
@@ -26,19 +27,24 @@ const tripPlanNote = document.querySelector("#trip-plan-note");
 const tripRouteContainer = document.querySelector("#trip-route");
 const weatherAssumptionsContainer = document.querySelector("#weather-assumptions");
 const packingPlanContainer = document.querySelector("#packing-plan");
+const flightNote = document.querySelector("#flight-note");
+const flightDetailsContainer = document.querySelector("#flight-details");
 
 init();
 
 async function init() {
-  const [scheduleResponse, tripPlanResponse] = await Promise.all([
+  const [scheduleResponse, tripPlanResponse, flightDetailsResponse] = await Promise.all([
     fetch("data/schedule.json"),
-    fetch("data/trip-plan.json").catch(() => null)
+    fetch("data/trip-plan.json").catch(() => null),
+    fetch("data/flight-details.json").catch(() => null)
   ]);
   state.schedule = await scheduleResponse.json();
   state.tripPlan = tripPlanResponse?.ok ? await tripPlanResponse.json() : null;
+  state.flightDetails = flightDetailsResponse?.ok ? await flightDetailsResponse.json() : null;
   renderFilters();
   renderSummary();
   renderTimeFocus();
+  renderFlightDetails();
   renderProposals();
   renderPlayWindows();
   renderTripPlan();
@@ -146,6 +152,58 @@ function renderTimeFocus() {
       </article>
     `)
     .join("");
+}
+
+function renderFlightDetails() {
+  const details = state.flightDetails;
+  if (!details) {
+    flightNote.textContent = "No flight detail data found yet.";
+    return;
+  }
+
+  flightNote.textContent = `${details.meta.status} ${details.meta.privacyNote}`;
+  flightDetailsContainer.innerHTML = details.itineraries
+    .map((itinerary) => `
+      <article class="flight-card ${itinerary.status === "confirmed" ? "confirmed" : "pending"}">
+        <div class="flight-card-header">
+          <div>
+            <span>${escapeHtml(itinerary.status)}</span>
+            <h3>${escapeHtml(itinerary.title)}</h3>
+          </div>
+          ${itinerary.checkInUrl ? `<a href="${escapeHtml(itinerary.checkInUrl)}" target="_blank" rel="noreferrer">Check in</a>` : `<span class="flight-link-muted">Check-in TBD</span>`}
+        </div>
+        <p>${escapeHtml(itinerary.checkInHint)}</p>
+        <p>${escapeHtml(itinerary.baggageNote)}</p>
+        ${itinerary.borderNote ? `<p>${escapeHtml(itinerary.borderNote)}</p>` : ""}
+        <div class="flight-leg-list">
+          ${itinerary.legs.map(renderFlightLeg).join("")}
+        </div>
+      </article>
+    `)
+    .join("");
+}
+
+function renderFlightLeg(leg) {
+  const depart = leg.departLocal ? `${formatDate(leg.date)} ${formatTime(leg.departLocal)}` : formatDate(leg.date);
+  const arrive = leg.arriveLocal ? formatTime(leg.arriveLocal) : "TBD";
+  return `
+    <div class="flight-leg">
+      <div>
+        <span>${escapeHtml(leg.flightNumber)}</span>
+        <strong>${escapeHtml(leg.from)} -> ${escapeHtml(leg.to)}</strong>
+        <small>${escapeHtml(leg.fromName)} -> ${escapeHtml(leg.toName)}</small>
+      </div>
+      <div>
+        <span>Depart</span>
+        <strong>${escapeHtml(depart)}</strong>
+      </div>
+      <div>
+        <span>Arrive</span>
+        <strong>${escapeHtml(arrive)}</strong>
+      </div>
+      <p>${escapeHtml([leg.layoverBefore, leg.terminalHint].filter(Boolean).join(" · "))}</p>
+    </div>
+  `;
 }
 
 function renderProposals() {

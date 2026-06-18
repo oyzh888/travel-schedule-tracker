@@ -6,7 +6,8 @@
       "Flights confirmed from Chase Travel and Trip.com emails.",
       "Meetings confirmed from Google Calendar on 2026-06-18 UTC.",
       "Sensitive booking references are intentionally omitted.",
-      "China route and packing baseline are tracked in data/trip-plan.json."
+      "China route and packing baseline are tracked in data/trip-plan.json.",
+      "Public-safe flight details are tracked in data/flight-details.json."
     ],
     "defaultTimezone": "America/Los_Angeles"
   },

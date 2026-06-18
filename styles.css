@@ -325,6 +325,89 @@ h2 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.flight-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.flight-card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  display: grid;
+  gap: 10px;
+  padding: 12px;
+}
+
+.flight-card.pending {
+  border-color: #fed7aa;
+}
+
+.flight-card-header {
+  align-items: start;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+.flight-card-header h3 {
+  font-size: 15px;
+  margin: 2px 0 0;
+}
+
+.flight-card-header span,
+.flight-card p,
+.flight-link-muted {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.flight-card-header a {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--blue);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 7px 10px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.flight-leg-list {
+  display: grid;
+  gap: 8px;
+}
+
+.flight-leg {
+  background: #f8fafc;
+  border: 1px solid #edf0f4;
+  border-radius: 8px;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: minmax(180px, 1fr) minmax(105px, auto) minmax(105px, auto);
+  padding: 10px;
+}
+
+.flight-leg div {
+  display: grid;
+  gap: 2px;
+}
+
+.flight-leg span,
+.flight-leg small {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.flight-leg strong {
+  font-size: 13px;
+}
+
+.flight-leg p {
+  color: var(--muted);
+  font-size: 12px;
+  grid-column: 1 / -1;
+}
+
 .proposal-card,
 .window-card {
   border: 1px solid var(--line);
@@ -611,6 +694,14 @@ textarea {
   .time-focus-grid,
   .route-grid,
   .packing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .flight-card-header {
+    display: grid;
+  }
+
+  .flight-leg {
     grid-template-columns: 1fr;
   }
 
