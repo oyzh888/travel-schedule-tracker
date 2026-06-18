@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "South America + China Trip Plan",
-    "updatedAt": "2026-06-18T06:30:00Z",
+    "updatedAt": "2026-06-18T16:55:00Z",
     "publicSafetyNote": "No booking references, passport details, private addresses, or contact details should be stored in this public repo.",
     "assumptions": [
       "Steve returns to the United States on 2026-07-05 from Hong Kong.",
@@ -75,13 +75,13 @@
     {
       "region": "Shanghai / Hangzhou",
       "dates": "2026-06-26 to 2026-06-28",
-      "expected": "Hot and humid, with plum-rain-season shower risk.",
-      "packingImpact": "Use breathable shirts, fast-dry pants, light rain shell or compact umbrella, and shoes that can handle wet pavement."
+      "expected": "Hot and humid, with rain risk around the plum-rain season.",
+      "packingImpact": "Use breathable shirts, fast-dry pants, compact umbrella or rain shell, and shoes that can handle wet pavement."
     },
     {
       "region": "Beijing",
       "dates": "2026-06-29 to 2026-06-30",
-      "expected": "Summer heat, usually less humid than Shanghai/Hangzhou.",
+      "expected": "Hot summer weather, usually drier than Shanghai/Hangzhou.",
       "packingImpact": "Short sleeves work during the day; keep one smarter layer for indoor AC and meetings."
     },
     {
@@ -93,83 +93,93 @@
     {
       "region": "Buenos Aires / Rio / Sao Paulo",
       "dates": "2026-06-19 to 2026-06-25",
-      "expected": "Southern Hemisphere winter: Buenos Aires and Sao Paulo can be cool; Rio is milder.",
-      "packingImpact": "Do not pack only summer clothes. Bring a light jacket or overshirt that also works on long flights."
+      "expected": "Southern Hemisphere winter: Buenos Aires can be quite cold, Sao Paulo can be cool, and Rio is milder but rainy.",
+      "packingImpact": "Do not pack only summer clothes. Bring real long sleeves plus a warm layer that also works on long flights."
     }
   ],
   "packingPlan": {
-    "strategy": "Pack for two climates: cool South America winter plus hot, humid China summer. Re-wear outer layers, wash quick-dry basics, and keep one meeting-ready outfit.",
+    "strategy": "Pack for three realities: cold/cool South America nights, rainy Rio/South China, and hot humid China city hopping. Keep documents and electronics in carry-on; use one laundry round instead of overpacking.",
     "baseline": [
       {
-        "category": "Tops",
+        "category": "Must pack - clothes",
         "items": [
-          "6 breathable T-shirts or polos",
-          "1 long-sleeve overshirt or thin merino/base layer",
-          "1 lightweight button-down or smart casual shirt"
-        ],
-        "notes": "Enough for humid China without overpacking; quick-dry fabric is better than thick cotton."
-      },
-      {
-        "category": "Bottoms",
-        "items": [
+          "6 short-sleeve breathable T-shirts or polos",
+          "2 long-sleeve shirts or thin base layers",
+          "1 lightweight button-down or smart casual shirt",
+          "1 warm layer: light fleece, hoodie, or packable jacket",
+          "1 compact rain shell or small umbrella",
           "2 lightweight travel pants",
-          "1 shorts or very light casual pants",
-          "1 nicer dark pants for meetings/dinners"
+          "1 nicer dark pants for meetings/dinners",
+          "2 shorts or very light casual bottoms",
+          "8-9 underwear",
+          "7-9 thin socks"
         ],
-        "notes": "Avoid jeans as the main pant because China south will be hot and wet."
+        "notes": "This is the core set. Buenos Aires can be cold, while China will be hot and humid, so mix short sleeves with real long-sleeve warmth."
       },
       {
-        "category": "Outerwear",
+        "category": "Must pack - shoes and laundry",
         "items": [
-          "1 light jacket, overshirt, or packable windbreaker",
-          "1 compact rain shell or small umbrella"
+          "1 comfortable walking shoe that can handle rain",
+          "1 slides/sandals or light secondary shoe",
+          "1 laundry bag",
+          "4-6 laundry detergent sheets/pods"
         ],
-        "notes": "Jacket covers South America evenings, airports, and heavy indoor AC in China."
+        "notes": "Your old 10 laundry balls is more than needed. Bring a few and plan one wash in Shanghai or Hong Kong."
       },
       {
-        "category": "Underwear and socks",
+        "category": "Must pack - toiletries and health",
         "items": [
-          "7 underwear",
-          "5 pairs thin socks",
-          "1 laundry bag"
+          "Toothbrush, toothpaste, retainer, retainer cleaner",
+          "Razor or beard trimmer",
+          "Small sunscreen",
+          "Travel-size moisturizer/face cream",
+          "Small medicine kit: stomach meds, painkiller, allergy meds, cold meds, bandages"
         ],
-        "notes": "Plan to do one laundry round in Shanghai/Hong Kong or wash quick-dry items in the sink."
+        "notes": "Use small travel packaging. South America plus China city hopping makes basic meds and sunscreen worth bringing."
       },
       {
-        "category": "Shoes",
+        "category": "Carry-on only",
         "items": [
-          "1 comfortable walking shoe",
-          "1 sandals/slides or light secondary shoe"
+          "Passport",
+          "H-1B / I-797 / U.S. visa or status documents",
+          "Wallet, ID, cards, some cash/RMB, keys",
+          "Printed or offline flight and hotel itinerary",
+          "MacBook Air, charger, and one cable",
+          "iPad if truly needed",
+          "AirPods Pro",
+          "Power bank",
+          "One clean T-shirt and underwear"
         ],
-        "notes": "Walking shoe should handle rain. Secondary shoe helps if the first pair gets wet."
+        "notes": "Do not check these. The printed visa/entry-doc item from the old list maps here: print any required visa/entry docs in color if applicable."
       },
       {
-        "category": "Flight and cross-border carry",
+        "category": "Nice to have",
         "items": [
-          "Passport and U.S. visa/status documents",
-          "Printed or offline flight/hotel itinerary",
-          "Power bank and chargers",
-          "Small toiletry kit",
-          "One clean T-shirt and underwear in carry-on"
+          "Small gifts if you already know recipients",
+          "Foldable tote for carrying things back from China",
+          "A few face masks, not a whole pack",
+          "Swim shorts if Rio/Hong Kong water time is likely",
+          "Private personal kit in discreet travel-size packaging"
         ],
-        "notes": "Keep this with the travel backpack, not checked luggage."
+        "notes": "Bring only what has a real use case. Gifts and souvenirs are optional unless you already know who they are for."
       },
       {
-        "category": "Electronics",
+        "category": "Reduce or skip",
         "items": [
-          "Laptop and charger",
-          "Phone charger and cable",
-          "Universal adapter",
-          "Backup USB-C cable",
-          "Light waterproof pouch or dry bag"
+          "Too many chargers: do not bring two MacBook chargers unless one is backup for a known need",
+          "Too many USB-C cables: 2-3 total is enough",
+          "Large skincare bottles",
+          "Full-size face mask pack",
+          "Heavy jeans as main pants",
+          "Old badge pickup item unless this trip has a specific event badge"
         ],
-        "notes": "Dry bag matters for South China/HK rain and cross-city transfers."
+        "notes": "The old list was safe but heavy. Cut duplicated electronics and full-size toiletries first."
       }
     ],
     "optional": [
-      "Swim shorts if beach/pool time is likely in Rio or Hong Kong",
-      "Small medicine kit: stomach meds, painkiller, allergy meds, bandages",
-      "Foldable tote for carrying things back from China",
+      "Maya souvenirs only if they are already packed and meaningful",
+      "Saudi clothes only if there is a specific dinner/photo/social purpose",
+      "Extra MacBook charger only if you want one in checked luggage and one in carry-on",
       "One extra empty packing cube for gifts/documents"
     ],
     "openQuestions": [
