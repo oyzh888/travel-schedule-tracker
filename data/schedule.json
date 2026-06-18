@@ -1,0 +1,309 @@
+{
+  "meta": {
+    "title": "Brazil / Argentina / Shanghai Travel Schedule",
+    "generatedAt": "2026-06-18T02:10:00Z",
+    "sourceNotes": [
+      "Flights confirmed from Chase Travel and Trip.com emails.",
+      "Meetings confirmed from Google Calendar on 2026-06-18 UTC.",
+      "Sensitive booking references are intentionally omitted."
+    ],
+    "defaultTimezone": "America/Los_Angeles"
+  },
+  "travel": [
+    {
+      "id": "flight-am669",
+      "type": "flight",
+      "date": "2026-06-18",
+      "title": "SFO to Mexico City",
+      "carrier": "Aeromexico",
+      "flightNumber": "AM669",
+      "from": "SFO",
+      "to": "MEX",
+      "departLocal": "2026-06-18T14:50:00-07:00",
+      "arriveLocal": "2026-06-18T20:25:00-06:00",
+      "status": "fixed",
+      "notes": "First leg of Chase Travel SFO to EZE itinerary."
+    },
+    {
+      "id": "flight-am30",
+      "type": "flight",
+      "date": "2026-06-19",
+      "title": "Mexico City to Buenos Aires",
+      "carrier": "Aeromexico",
+      "flightNumber": "AM30",
+      "from": "MEX",
+      "to": "EZE",
+      "departLocal": "2026-06-19T09:15:00-06:00",
+      "arriveLocal": "2026-06-19T21:25:00-03:00",
+      "status": "fixed",
+      "notes": "MEX layover is 12h50."
+    },
+    {
+      "id": "stay-buenos-aires",
+      "type": "lodging",
+      "date": "2026-06-19",
+      "title": "Stay at Anselmo Buenos Aires Curio Collection by Hilton",
+      "from": "2026-06-19",
+      "to": "2026-06-22",
+      "location": "Anselmo Aieta 1069, San Telmo, Buenos Aires",
+      "status": "fixed"
+    },
+    {
+      "id": "flight-g37609",
+      "type": "flight",
+      "date": "2026-06-21",
+      "title": "Buenos Aires to Rio de Janeiro",
+      "carrier": "GOL",
+      "flightNumber": "G37609",
+      "from": "AEP",
+      "to": "GIG",
+      "departLocal": "2026-06-21T14:30:00-03:00",
+      "arriveLocal": "2026-06-21T17:30:00-03:00",
+      "status": "fixed"
+    },
+    {
+      "id": "stay-rio",
+      "type": "lodging",
+      "date": "2026-06-21",
+      "title": "Stay near Ipanema beach",
+      "from": "2026-06-21",
+      "to": "2026-06-25",
+      "location": "R. Prudente de Morais, 326, Ipanema, Rio de Janeiro",
+      "status": "fixed",
+      "notes": "Google Calendar contains duplicate Portuguese/English entries for this same stay."
+    },
+    {
+      "id": "flight-g31447",
+      "type": "flight",
+      "date": "2026-06-24",
+      "title": "Rio de Janeiro to Sao Paulo",
+      "carrier": "GOL",
+      "flightNumber": "G31447",
+      "from": "GIG",
+      "to": "CGH",
+      "departLocal": "2026-06-24T14:20:00-03:00",
+      "arriveLocal": "2026-06-24T15:25:00-03:00",
+      "status": "fixed"
+    },
+    {
+      "id": "flight-et507",
+      "type": "flight",
+      "date": "2026-06-25",
+      "title": "Sao Paulo to Addis Ababa",
+      "carrier": "Ethiopian Airlines",
+      "flightNumber": "ET507",
+      "from": "GRU",
+      "to": "ADD",
+      "departLocal": "2026-06-25T01:45:00-03:00",
+      "arriveLocal": "2026-06-25T19:45:00+03:00",
+      "status": "fixed"
+    },
+    {
+      "id": "flight-et684",
+      "type": "flight",
+      "date": "2026-06-25",
+      "title": "Addis Ababa to Shanghai",
+      "carrier": "Ethiopian Airlines",
+      "flightNumber": "ET684",
+      "from": "ADD",
+      "to": "PVG",
+      "departLocal": "2026-06-25T23:30:00+03:00",
+      "arriveLocal": "2026-06-26T15:15:00+08:00",
+      "status": "fixed",
+      "notes": "Trip.com says no need to collect and re-check baggage during ADD transfer."
+    }
+  ],
+  "meetings": [
+    {
+      "id": "task-cancel-xiaoyunque",
+      "type": "reminder",
+      "title": "Cancel Xiaoyunque subscription",
+      "startPT": "2026-06-18T09:00:00-07:00",
+      "endPT": "2026-06-18T10:00:00-07:00",
+      "localTimeLabel": "SFO morning",
+      "risk": "low",
+      "recommendation": "keep"
+    },
+    {
+      "id": "meeting-dennis-20260618",
+      "type": "meeting",
+      "title": "Steve / Wei / Suwandi / Dennis",
+      "startPT": "2026-06-18T21:00:00-07:00",
+      "endPT": "2026-06-18T22:05:00-07:00",
+      "localTimeLabel": "MEX 22:00-23:05",
+      "risk": "overlap",
+      "recommendation": "choose one of the overlapping PAW/Dennis meetings"
+    },
+    {
+      "id": "meeting-paw-20260618",
+      "type": "meeting",
+      "title": "PAW Weekly Meeting",
+      "startPT": "2026-06-18T21:00:00-07:00",
+      "endPT": "2026-06-18T22:00:00-07:00",
+      "localTimeLabel": "MEX 22:00-23:00",
+      "risk": "overlap",
+      "recommendation": "choose one of the overlapping PAW/Dennis meetings"
+    },
+    {
+      "id": "meeting-haoqing2-20260618",
+      "type": "meeting",
+      "title": "sync haoqing2",
+      "startPT": "2026-06-18T22:00:00-07:00",
+      "endPT": "2026-06-18T23:00:00-07:00",
+      "localTimeLabel": "MEX 23:00-00:00",
+      "risk": "late",
+      "recommendation": "reasonable if energy is okay"
+    },
+    {
+      "id": "meeting-aitist-weekly-20260619",
+      "type": "meeting",
+      "title": "Aitist Weekly",
+      "startPT": "2026-06-19T22:00:00-07:00",
+      "endPT": "2026-06-19T22:30:00-07:00",
+      "localTimeLabel": "Buenos Aires 02:00-02:30 on Jun 20",
+      "risk": "late",
+      "recommendation": "can keep if aggressive, but it is after long travel"
+    },
+    {
+      "id": "meeting-ai-shorts-20260620",
+      "type": "meeting",
+      "title": "Discuss AI short drama overseas",
+      "startPT": "2026-06-20T21:00:00-07:00",
+      "endPT": "2026-06-20T21:30:00-07:00",
+      "localTimeLabel": "Buenos Aires 01:00-01:30 on Jun 21",
+      "risk": "late",
+      "recommendation": "keep if needed"
+    },
+    {
+      "id": "meeting-when2buy-20260622",
+      "type": "meeting",
+      "title": "When2Buy Progress Tracking",
+      "startPT": "2026-06-22T21:00:00-07:00",
+      "endPT": "2026-06-22T21:45:00-07:00",
+      "localTimeLabel": "Rio 01:00-01:45 on Jun 23",
+      "risk": "late",
+      "recommendation": "can keep under aggressive rule"
+    },
+    {
+      "id": "meeting-haoqing-20260622",
+      "type": "meeting",
+      "title": "sync haoqing",
+      "startPT": "2026-06-22T22:00:00-07:00",
+      "endPT": "2026-06-22T23:00:00-07:00",
+      "localTimeLabel": "Rio 02:00-03:00 on Jun 23",
+      "risk": "late",
+      "recommendation": "borderline but not 4-5am"
+    },
+    {
+      "id": "meeting-hui-20260623",
+      "type": "meeting",
+      "title": "Sync Steve <> Hui",
+      "startPT": "2026-06-23T19:00:00-07:00",
+      "endPT": "2026-06-23T19:45:00-07:00",
+      "localTimeLabel": "Rio 23:00-23:45",
+      "risk": "low",
+      "recommendation": "keep"
+    },
+    {
+      "id": "meeting-dennis-20260623",
+      "type": "meeting",
+      "title": "Steve / Wei / Suwandi / Dennis",
+      "startPT": "2026-06-23T20:00:00-07:00",
+      "endPT": "2026-06-23T21:05:00-07:00",
+      "localTimeLabel": "Rio 00:00-01:05 on Jun 24",
+      "risk": "overlap",
+      "recommendation": "overlaps PAW"
+    },
+    {
+      "id": "meeting-paw-20260623",
+      "type": "meeting",
+      "title": "PAW Weekly Meeting",
+      "startPT": "2026-06-23T20:00:00-07:00",
+      "endPT": "2026-06-23T21:00:00-07:00",
+      "localTimeLabel": "Rio 00:00-01:00 on Jun 24",
+      "risk": "overlap",
+      "recommendation": "overlaps Dennis meeting"
+    },
+    {
+      "id": "meeting-aitist-tech-20260623",
+      "type": "meeting",
+      "title": "Aitist Tech Sync",
+      "startPT": "2026-06-23T22:00:00-07:00",
+      "endPT": "2026-06-23T22:30:00-07:00",
+      "localTimeLabel": "Rio 02:00-02:30 on Jun 24",
+      "risk": "late",
+      "recommendation": "can keep under aggressive rule"
+    },
+    {
+      "id": "meeting-dennis-20260625",
+      "type": "meeting",
+      "title": "Steve / Wei / Suwandi / Dennis",
+      "startPT": "2026-06-25T20:00:00-07:00",
+      "endPT": "2026-06-25T21:05:00-07:00",
+      "localTimeLabel": "During ADD-PVG flight",
+      "risk": "blocked",
+      "recommendation": "skip, delegate, or reschedule"
+    },
+    {
+      "id": "meeting-paw-20260625",
+      "type": "meeting",
+      "title": "PAW Weekly Meeting",
+      "startPT": "2026-06-25T20:00:00-07:00",
+      "endPT": "2026-06-25T21:00:00-07:00",
+      "localTimeLabel": "During ADD-PVG flight",
+      "risk": "blocked",
+      "recommendation": "skip, delegate, or reschedule"
+    },
+    {
+      "id": "meeting-haoqing2-20260625",
+      "type": "meeting",
+      "title": "sync haoqing2",
+      "startPT": "2026-06-25T22:00:00-07:00",
+      "endPT": "2026-06-25T23:00:00-07:00",
+      "localTimeLabel": "During ADD-PVG flight",
+      "risk": "blocked",
+      "recommendation": "skip, delegate, or reschedule"
+    },
+    {
+      "id": "deadline-neurips-ed",
+      "type": "deadline",
+      "title": "Deadline: NeurIPS ED reviews due",
+      "startPT": "2026-06-26T04:30:00-07:00",
+      "endPT": "2026-06-26T05:00:00-07:00",
+      "localTimeLabel": "Shanghai 19:30-20:00",
+      "risk": "low",
+      "recommendation": "deadline reminder"
+    },
+    {
+      "id": "meeting-dennis-shanghai-20260626",
+      "type": "meeting",
+      "title": "Dennis in Shanghai | afternoon",
+      "startPT": "2026-06-26T14:00:00-07:00",
+      "endPT": "2026-06-26T15:00:00-07:00",
+      "localTimeLabel": "Shanghai 05:00-06:00 on Jun 27",
+      "risk": "early",
+      "recommendation": "too early; consider moving"
+    },
+    {
+      "id": "meeting-aitist-weekly-20260626",
+      "type": "meeting",
+      "title": "Aitist Weekly",
+      "startPT": "2026-06-26T22:00:00-07:00",
+      "endPT": "2026-06-26T22:30:00-07:00",
+      "localTimeLabel": "Shanghai 13:00-13:30 on Jun 27",
+      "risk": "low",
+      "recommendation": "keep"
+    },
+    {
+      "id": "meeting-dennis-shanghai-20260627",
+      "type": "meeting",
+      "title": "Dennis in Shanghai | afternoon",
+      "startPT": "2026-06-27T14:00:00-07:00",
+      "endPT": "2026-06-27T15:00:00-07:00",
+      "localTimeLabel": "Shanghai 05:00-06:00 on Jun 28",
+      "risk": "early",
+      "recommendation": "too early if included in scope"
+    }
+  ]
+}
+

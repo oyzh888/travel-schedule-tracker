@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Travel Schedule Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Travel Plan</p>
+        <h1>Brazil / Argentina / Shanghai Schedule</h1>
+      </div>
+      <div class="toolbar">
+        <button id="export-json">Export JSON</button>
+        <button id="export-md">Export Markdown</button>
+        <button id="clear-adjustments" class="ghost">Clear Draft</button>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="panel timeline-panel">
+        <div class="panel-header">
+          <div>
+            <h2>Timeline</h2>
+            <p>Flights, stays, meetings, and blockers through Jun 27.</p>
+          </div>
+          <div class="filters" aria-label="Filters">
+            <button class="filter active" data-filter="all">All</button>
+            <button class="filter" data-filter="travel">Travel</button>
+            <button class="filter" data-filter="meeting">Meetings</button>
+            <button class="filter" data-filter="risk">Risk</button>
+          </div>
+        </div>
+        <div id="summary" class="summary-grid"></div>
+        <div id="timeline" class="timeline"></div>
+      </section>
+
+      <aside class="panel adjustment-panel">
+        <div class="panel-header compact">
+          <div>
+            <h2>Adjustment Draft</h2>
+            <p>Track proposed changes before editing calendar.</p>
+          </div>
+        </div>
+
+        <form id="adjustment-form" class="adjustment-form">
+          <label>
+            Event
+            <select id="event-select" required></select>
+          </label>
+          <label>
+            Action
+            <select id="action-select" required>
+              <option value="reschedule">Reschedule</option>
+              <option value="skip">Skip</option>
+              <option value="delegate">Delegate</option>
+              <option value="keep">Keep</option>
+            </select>
+          </label>
+          <div class="form-row">
+            <label>
+              New date
+              <input id="new-date" type="date">
+            </label>
+            <label>
+              New time
+              <input id="new-time" type="time">
+            </label>
+          </div>
+          <label>
+            Reason / note
+            <textarea id="reason" rows="4" placeholder="Why this change is needed"></textarea>
+          </label>
+          <button type="submit" class="primary">Add Adjustment</button>
+        </form>
+
+        <div id="adjustments" class="adjustments"></div>
+      </aside>
+    </main>
+
+    <template id="adjustment-template">
+      <article class="adjustment-card">
+        <div>
+          <strong class="adjustment-title"></strong>
+          <p class="adjustment-meta"></p>
+          <p class="adjustment-reason"></p>
+        </div>
+        <button class="remove-adjustment" type="button" title="Remove adjustment">Remove</button>
+      </article>
+    </template>
+
+    <script src="app.js" type="module"></script>
+  </body>
+</html>
+
