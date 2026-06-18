@@ -406,6 +406,74 @@ h2 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.route-grid,
+.packing-grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 12px;
+}
+
+.route-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.packing-grid h3 {
+  font-size: 15px;
+  grid-column: 1 / -1;
+  margin: 0;
+}
+
+.route-card,
+.packing-card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  display: grid;
+  gap: 6px;
+  padding: 12px;
+}
+
+.route-card {
+  background: #f8fafc;
+}
+
+.route-card span,
+.route-card em,
+.packing-card span {
+  color: var(--muted);
+  font-size: 12px;
+  font-style: normal;
+}
+
+.route-card strong,
+.packing-card strong {
+  font-size: 14px;
+}
+
+.route-card p,
+.packing-card p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.packing-card ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.packing-card li {
+  font-size: 13px;
+  margin: 2px 0;
+}
+
+.optional-card {
+  border-color: #bfdbfe;
+}
+
+.open-card {
+  border-color: #fed7aa;
+}
+
 .window-card strong {
   font-size: 14px;
 }
@@ -521,7 +589,9 @@ textarea {
 
   .proposal-grid,
   .window-grid,
-  .time-focus-grid {
+  .time-focus-grid,
+  .route-grid,
+  .packing-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -538,7 +608,9 @@ textarea {
 
   .proposal-grid,
   .window-grid,
-  .time-focus-grid {
+  .time-focus-grid,
+  .route-grid,
+  .packing-grid {
     grid-template-columns: 1fr;
   }
 

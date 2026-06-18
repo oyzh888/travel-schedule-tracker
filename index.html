@@ -11,7 +11,7 @@
     <header class="topbar">
       <div>
         <p class="eyebrow">Travel Plan</p>
-        <h1>Brazil / Argentina / Shanghai Schedule</h1>
+        <h1>South America / China Travel Plan</h1>
       </div>
       <div class="toolbar">
         <button id="export-json">Export JSON</button>
@@ -25,7 +25,7 @@
         <div class="panel-header">
           <div>
             <h2>Timeline</h2>
-            <p>Flights, stays, meetings, and blockers through Jun 27.</p>
+            <p>Flights, stays, meetings, blockers, and China route notes through Jul 5.</p>
           </div>
           <div class="filters" aria-label="Filters">
             <button class="filter active" data-filter="all">All</button>
@@ -55,6 +55,15 @@
             <h2>Possible Play Windows</h2>
           </div>
           <div id="play-windows" class="window-grid"></div>
+        </section>
+        <section class="diagnosis trip-plan-section">
+          <div class="section-title">
+            <h2>China Route & Packing</h2>
+          </div>
+          <p id="trip-plan-note" class="diagnosis-note">Loading China route and packing baseline.</p>
+          <div id="trip-route" class="route-grid"></div>
+          <div id="weather-assumptions" class="packing-grid"></div>
+          <div id="packing-plan" class="packing-grid"></div>
         </section>
         <div id="timeline" class="timeline"></div>
       </section>

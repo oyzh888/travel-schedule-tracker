@@ -1,5 +1,6 @@
 const state = {
   schedule: null,
+  tripPlan: null,
   filter: "all",
   adjustments: loadAdjustments()
 };
@@ -21,17 +22,26 @@ const adjustmentsContainer = document.querySelector("#adjustments");
 const proposalsContainer = document.querySelector("#proposals");
 const playWindowsContainer = document.querySelector("#play-windows");
 const timeFocusContainer = document.querySelector("#time-focus");
+const tripPlanNote = document.querySelector("#trip-plan-note");
+const tripRouteContainer = document.querySelector("#trip-route");
+const weatherAssumptionsContainer = document.querySelector("#weather-assumptions");
+const packingPlanContainer = document.querySelector("#packing-plan");
 
 init();
 
 async function init() {
-  const response = await fetch("data/schedule.json");
-  state.schedule = await response.json();
+  const [scheduleResponse, tripPlanResponse] = await Promise.all([
+    fetch("data/schedule.json"),
+    fetch("data/trip-plan.json").catch(() => null)
+  ]);
+  state.schedule = await scheduleResponse.json();
+  state.tripPlan = tripPlanResponse?.ok ? await tripPlanResponse.json() : null;
   renderFilters();
   renderSummary();
   renderTimeFocus();
   renderProposals();
   renderPlayWindows();
+  renderTripPlan();
   renderTimeline();
   renderEventSelect();
   renderAdjustments();
@@ -177,6 +187,67 @@ function renderPlayWindows() {
       </article>
     `)
     .join("");
+}
+
+function renderTripPlan() {
+  const plan = state.tripPlan;
+  if (!plan) {
+    tripPlanNote.textContent = "No China route or packing data found yet.";
+    return;
+  }
+
+  tripPlanNote.textContent = `${plan.packingPlan.strategy} Updated ${formatDate(plan.meta.updatedAt.slice(0, 10))}.`;
+  tripRouteContainer.innerHTML = plan.route
+    .map((stop) => `
+      <article class="route-card">
+        <span>${formatDate(stop.date)}</span>
+        <strong>${escapeHtml(stop.city)}</strong>
+        <em>${escapeHtml(stop.status)}</em>
+        <p>${escapeHtml(stop.notes)}</p>
+      </article>
+    `)
+    .join("");
+
+  weatherAssumptionsContainer.innerHTML = `
+    <h3>Weather Assumptions</h3>
+    ${plan.weatherAssumptions
+      .map((item) => `
+        <article class="packing-card">
+          <strong>${escapeHtml(item.region)}</strong>
+          <span>${escapeHtml(item.dates)}</span>
+          <p>${escapeHtml(item.expected)}</p>
+          <p>${escapeHtml(item.packingImpact)}</p>
+        </article>
+      `)
+      .join("")}
+  `;
+
+  packingPlanContainer.innerHTML = `
+    <h3>Packing Baseline</h3>
+    ${plan.packingPlan.baseline
+      .map((group) => `
+        <article class="packing-card">
+          <strong>${escapeHtml(group.category)}</strong>
+          <ul>
+            ${group.items.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}
+          </ul>
+          <p>${escapeHtml(group.notes)}</p>
+        </article>
+      `)
+      .join("")}
+    <article class="packing-card optional-card">
+      <strong>Optional / To Decide</strong>
+      <ul>
+        ${plan.packingPlan.optional.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}
+      </ul>
+    </article>
+    <article class="packing-card open-card">
+      <strong>Open Questions</strong>
+      <ul>
+        ${plan.packingPlan.openQuestions.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}
+      </ul>
+    </article>
+  `;
 }
 
 function renderTimeline() {

@@ -1,0 +1,181 @@
+{
+  "meta": {
+    "title": "South America + China Trip Plan",
+    "updatedAt": "2026-06-18T06:30:00Z",
+    "publicSafetyNote": "No booking references, passport details, private addresses, or contact details should be stored in this public repo.",
+    "assumptions": [
+      "Steve returns to the United States on 2026-07-05 from Hong Kong.",
+      "China itinerary details after city/date level are pending Steve's afternoon update.",
+      "Packing advice is based on late-June and early-July seasonal conditions and should be refined with near-term forecasts before departure."
+    ]
+  },
+  "route": [
+    {
+      "date": "2026-06-26",
+      "city": "Shanghai",
+      "status": "arrival",
+      "notes": "Land at PVG in the afternoon. Keep evening light because this follows GRU-ADD-PVG long-haul travel."
+    },
+    {
+      "date": "2026-06-27",
+      "city": "Shanghai",
+      "status": "city day",
+      "notes": "Meetings currently proposed for morning and early afternoon China time."
+    },
+    {
+      "date": "2026-06-28",
+      "city": "Hangzhou",
+      "status": "city transfer",
+      "notes": "Likely hot, humid, and rainy. Keep one fast-dry outfit ready."
+    },
+    {
+      "date": "2026-06-29",
+      "city": "Beijing",
+      "status": "city day",
+      "notes": "Warmer and potentially drier than the Yangtze Delta, but still summer heat."
+    },
+    {
+      "date": "2026-06-30",
+      "city": "Beijing",
+      "status": "city day",
+      "notes": "Leave one nicer outfit available for meetings or dinners."
+    },
+    {
+      "date": "2026-07-01",
+      "city": "Shenzhen",
+      "status": "city transfer",
+      "notes": "Hot, very humid, and likely thunderstorm risk. Prioritize breathable layers and waterproof carry."
+    },
+    {
+      "date": "2026-07-02",
+      "city": "Macau",
+      "status": "city transfer",
+      "notes": "Similar to Shenzhen/Hong Kong: hot, humid, showers possible."
+    },
+    {
+      "date": "2026-07-03",
+      "city": "Hong Kong",
+      "status": "city day",
+      "notes": "Hot and humid. Keep passport, onward ticket, and cross-border essentials easy to reach."
+    },
+    {
+      "date": "2026-07-04",
+      "city": "Hong Kong",
+      "status": "city day",
+      "notes": "Buffer day before U.S. return. Do laundry or repack here if needed."
+    },
+    {
+      "date": "2026-07-05",
+      "city": "Hong Kong to United States",
+      "status": "return flight",
+      "notes": "Return-to-U.S. day. Keep U.S. entry documents and one clean flight outfit in carry-on."
+    }
+  ],
+  "weatherAssumptions": [
+    {
+      "region": "Shanghai / Hangzhou",
+      "dates": "2026-06-26 to 2026-06-28",
+      "expected": "Hot and humid, with plum-rain-season shower risk.",
+      "packingImpact": "Use breathable shirts, fast-dry pants, light rain shell or compact umbrella, and shoes that can handle wet pavement."
+    },
+    {
+      "region": "Beijing",
+      "dates": "2026-06-29 to 2026-06-30",
+      "expected": "Summer heat, usually less humid than Shanghai/Hangzhou.",
+      "packingImpact": "Short sleeves work during the day; keep one smarter layer for indoor AC and meetings."
+    },
+    {
+      "region": "Shenzhen / Macau / Hong Kong",
+      "dates": "2026-07-01 to 2026-07-05",
+      "expected": "Very hot and humid, with thunderstorms or typhoon-season rain possible.",
+      "packingImpact": "Prioritize quick-dry clothes, sandals or waterproof-friendly shoes, compact umbrella, and a dry bag for electronics."
+    },
+    {
+      "region": "Buenos Aires / Rio / Sao Paulo",
+      "dates": "2026-06-19 to 2026-06-25",
+      "expected": "Southern Hemisphere winter: Buenos Aires and Sao Paulo can be cool; Rio is milder.",
+      "packingImpact": "Do not pack only summer clothes. Bring a light jacket or overshirt that also works on long flights."
+    }
+  ],
+  "packingPlan": {
+    "strategy": "Pack for two climates: cool South America winter plus hot, humid China summer. Re-wear outer layers, wash quick-dry basics, and keep one meeting-ready outfit.",
+    "baseline": [
+      {
+        "category": "Tops",
+        "items": [
+          "6 breathable T-shirts or polos",
+          "1 long-sleeve overshirt or thin merino/base layer",
+          "1 lightweight button-down or smart casual shirt"
+        ],
+        "notes": "Enough for humid China without overpacking; quick-dry fabric is better than thick cotton."
+      },
+      {
+        "category": "Bottoms",
+        "items": [
+          "2 lightweight travel pants",
+          "1 shorts or very light casual pants",
+          "1 nicer dark pants for meetings/dinners"
+        ],
+        "notes": "Avoid jeans as the main pant because China south will be hot and wet."
+      },
+      {
+        "category": "Outerwear",
+        "items": [
+          "1 light jacket, overshirt, or packable windbreaker",
+          "1 compact rain shell or small umbrella"
+        ],
+        "notes": "Jacket covers South America evenings, airports, and heavy indoor AC in China."
+      },
+      {
+        "category": "Underwear and socks",
+        "items": [
+          "7 underwear",
+          "5 pairs thin socks",
+          "1 laundry bag"
+        ],
+        "notes": "Plan to do one laundry round in Shanghai/Hong Kong or wash quick-dry items in the sink."
+      },
+      {
+        "category": "Shoes",
+        "items": [
+          "1 comfortable walking shoe",
+          "1 sandals/slides or light secondary shoe"
+        ],
+        "notes": "Walking shoe should handle rain. Secondary shoe helps if the first pair gets wet."
+      },
+      {
+        "category": "Flight and cross-border carry",
+        "items": [
+          "Passport and U.S. visa/status documents",
+          "Printed or offline flight/hotel itinerary",
+          "Power bank and chargers",
+          "Small toiletry kit",
+          "One clean T-shirt and underwear in carry-on"
+        ],
+        "notes": "Keep this with the travel backpack, not checked luggage."
+      },
+      {
+        "category": "Electronics",
+        "items": [
+          "Laptop and charger",
+          "Phone charger and cable",
+          "Universal adapter",
+          "Backup USB-C cable",
+          "Light waterproof pouch or dry bag"
+        ],
+        "notes": "Dry bag matters for South China/HK rain and cross-city transfers."
+      }
+    ],
+    "optional": [
+      "Swim shorts if beach/pool time is likely in Rio or Hong Kong",
+      "Small medicine kit: stomach meds, painkiller, allergy meds, bandages",
+      "Foldable tote for carrying things back from China",
+      "One extra empty packing cube for gifts/documents"
+    ],
+    "openQuestions": [
+      "Any formal meetings, dinners, or events in Shanghai/Beijing/Shenzhen/HK?",
+      "Checked luggage size and airline baggage limits for each segment?",
+      "Whether Steve needs to bring gifts, product samples, documents, or electronics back to China."
+    ]
+  }
+}
