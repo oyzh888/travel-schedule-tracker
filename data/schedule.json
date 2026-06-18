@@ -318,15 +318,15 @@
   ],
   "proposals": [
     {
-      "id": "proposal-merge-paw-20260618",
+      "id": "proposal-sync-paw-copy-20260618",
       "priority": "low",
       "eventId": "meeting-paw-20260618",
-      "eventTitle": "PAW Weekly Meeting",
-      "action": "skip",
+      "eventTitle": "PAW / Dennis shared meeting copy",
+      "action": "keep",
       "from": "2026-06-18T21:00:00-07:00",
-      "to": "",
-      "newLocalTime": "",
-      "reason": "This fully overlaps Steve / Wei / Suwandi / Dennis in MEX 22:00-23:00. Minimal-change option is to use one call/link instead of moving both."
+      "to": "2026-06-18T21:00:00-07:00",
+      "newLocalTime": "MEX 22:00-23:00 on Jun 18",
+      "reason": "PAW Weekly Meeting and Steve / Wei / Suwandi / Dennis are the same shared meeting. This instance is already in the same slot, so keep the duplicate calendar entries aligned instead of treating one as a separate skip."
     },
     {
       "id": "proposal-move-aitist-weekly-20260619",
@@ -371,33 +371,35 @@
       "eventTitle": "When2Buy Progress Tracking",
       "action": "reschedule",
       "from": "2026-06-22T21:00:00-07:00",
-      "to": "2026-06-22T17:30:00-07:00",
-      "newLocalTime": "Rio 21:30-22:15 on Jun 22",
-      "newParticipantTime": "China 08:30-09:15 on Jun 23",
-      "reason": "Original is Rio 01:00-01:45. Moving to Rio 21:30 keeps Steve in a normal evening window and leaves room for Haoqing right after."
+      "to": "2026-06-22T18:00:00-07:00",
+      "newLocalTime": "Rio 22:00-22:45 on Jun 22",
+      "participantLabel": "Pacific participants",
+      "newParticipantTime": "PT 18:00-18:45 on Jun 22",
+      "reason": "This is with U.S. Pacific-time participants, not a China-morning call. Moving from PT 21:00 to PT 18:00 keeps the West Coast side reasonable while avoiding Steve's Rio 01:00-01:45 slot."
     },
     {
-      "id": "proposal-merge-paw-20260623",
-      "priority": "low",
+      "id": "proposal-move-paw-copy-20260623",
+      "priority": "medium",
       "eventId": "meeting-paw-20260623",
-      "eventTitle": "PAW Weekly Meeting",
-      "action": "skip",
+      "eventTitle": "PAW / Dennis shared meeting copy",
+      "action": "reschedule",
       "from": "2026-06-23T20:00:00-07:00",
-      "to": "",
-      "newLocalTime": "",
-      "reason": "This overlaps Steve / Wei / Suwandi / Dennis at Rio 00:00-01:00. Minimal-change option is to treat one as duplicate and keep one call."
+      "to": "2026-06-23T18:20:00-07:00",
+      "newLocalTime": "Rio 22:20-23:20 on Jun 23",
+      "newParticipantTime": "China 09:20-10:20 on Jun 24",
+      "reason": "PAW Weekly Meeting and Steve / Wei / Suwandi / Dennis are the same meeting. Move this calendar copy to the same target slot as the Dennis copy so the group has one memorable time."
     },
     {
       "id": "proposal-move-dennis-20260623",
       "priority": "medium",
       "eventId": "meeting-dennis-20260623",
-      "eventTitle": "Steve / Wei / Suwandi / Dennis",
+      "eventTitle": "PAW / Dennis shared meeting",
       "action": "reschedule",
       "from": "2026-06-23T20:00:00-07:00",
       "to": "2026-06-23T18:20:00-07:00",
       "newLocalTime": "Rio 22:20-23:25 on Jun 23",
       "newParticipantTime": "China 09:20-10:25 on Jun 24",
-      "reason": "Original is Rio 00:00-01:05 and overlaps PAW. Moving the shared block earlier keeps Steve before 23:30 and is a good China morning slot."
+      "reason": "This is the same meeting as the PAW Weekly Meeting calendar entry. Move both entries together to one shared target slot so the team does not have to remember separate times."
     },
     {
       "id": "proposal-move-hui-20260623",
@@ -427,24 +429,25 @@
       "id": "proposal-move-dennis-20260625",
       "priority": "high",
       "eventId": "meeting-dennis-20260625",
-      "eventTitle": "Steve / Wei / Suwandi / Dennis",
+      "eventTitle": "PAW / Dennis shared meeting",
       "action": "reschedule",
       "from": "2026-06-25T20:00:00-07:00",
       "to": "2026-06-26T18:00:00-07:00",
       "newLocalTime": "Shanghai 09:00-10:05 on Jun 27",
       "newParticipantTime": "China 09:00-10:05 on Jun 27",
-      "reason": "Original is during ADD-PVG flight. Moving to Saturday morning Shanghai time is more natural than preserving the old PT evening hour."
+      "reason": "Original is during ADD-PVG flight. Move both PAW/Dennis calendar copies to the same Saturday morning Shanghai slot so this shared meeting stays in one place."
     },
     {
-      "id": "proposal-skip-paw-20260625",
+      "id": "proposal-move-paw-copy-20260625",
       "priority": "high",
       "eventId": "meeting-paw-20260625",
-      "eventTitle": "PAW Weekly Meeting",
-      "action": "skip",
+      "eventTitle": "PAW / Dennis shared meeting copy",
+      "action": "reschedule",
       "from": "2026-06-25T20:00:00-07:00",
-      "to": "",
-      "newLocalTime": "",
-      "reason": "Original is during ADD-PVG flight and overlaps the Dennis/Wei/Suwandi meeting. Minimal-change option is to skip/delegate this duplicate instance."
+      "to": "2026-06-26T18:00:00-07:00",
+      "newLocalTime": "Shanghai 09:00-10:00 on Jun 27",
+      "newParticipantTime": "China 09:00-10:00 on Jun 27",
+      "reason": "This is the PAW calendar copy of the same shared meeting. Move it together with the Dennis copy instead of skipping one and moving the other."
     },
     {
       "id": "proposal-move-haoqing2-20260625",

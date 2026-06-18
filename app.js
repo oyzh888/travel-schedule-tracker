@@ -483,7 +483,7 @@ function renderProposalTime(proposal, sourceEvent) {
       </div>
       ${proposal.newParticipantTime ? `
         <div>
-          <span>China participants</span>
+          <span>${escapeHtml(proposal.participantLabel || "China participants")}</span>
           <strong>${escapeHtml(proposal.newParticipantTime)}</strong>
         </div>
       ` : ""}
