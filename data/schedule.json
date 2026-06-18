@@ -114,14 +114,14 @@
     }
   ],
   "rules": {
-    "normalLocalWindow": "08:00-24:00",
-    "toleratedLocalWindow": "00:00-01:00",
+    "normalLocalWindow": "08:00-23:30",
+    "toleratedLocalWindow": "23:30-01:00 only when minimal-change is more important",
     "avoid": [
       "in flight",
       "within 10 minutes before boarding",
       "03:00-05:00 local time"
     ],
-    "strategy": "Minimize calendar changes first; prefer moving recurring or duplicate meetings only when needed."
+    "strategy": "Prefer Steve local 08:00-23:30. For meetings with China-based participants, also prefer Beijing time 08:00-23:00, ideally morning."
   },
   "meetings": [
     {
@@ -334,9 +334,22 @@
       "eventTitle": "Aitist Weekly",
       "action": "reschedule",
       "from": "2026-06-19T22:00:00-07:00",
-      "to": "2026-06-19T20:30:00-07:00",
-      "newLocalTime": "Buenos Aires 00:30-01:00 on Jun 20",
-      "reason": "Original is Buenos Aires 02:00-02:30 after a long travel day. Moving 90 minutes earlier keeps it near the tolerated 00:00-01:00 band."
+      "to": "2026-06-20T04:30:00-07:00",
+      "newLocalTime": "Buenos Aires 08:30-09:00 on Jun 20",
+      "newParticipantTime": "China 19:30-20:00 on Jun 20",
+      "reason": "Original is Buenos Aires 02:00-02:30 right after landing night. Moving to the next local morning avoids the awkward midnight slot and still keeps China participants in a reasonable evening window."
+    },
+    {
+      "id": "proposal-move-ai-shorts-20260620",
+      "priority": "medium",
+      "eventId": "meeting-ai-shorts-20260620",
+      "eventTitle": "Discuss AI short drama overseas",
+      "action": "reschedule",
+      "from": "2026-06-20T21:00:00-07:00",
+      "to": "2026-06-20T18:30:00-07:00",
+      "newLocalTime": "Buenos Aires 22:30-23:00 on Jun 20",
+      "newParticipantTime": "China 09:30-10:00 on Jun 21",
+      "reason": "Original is Buenos Aires 01:00-01:30. Moving 2.5 hours earlier lands in Steve's preferred evening window and is a clean China morning slot."
     },
     {
       "id": "proposal-move-haoqing-20260622",
@@ -345,9 +358,22 @@
       "eventTitle": "sync haoqing",
       "action": "reschedule",
       "from": "2026-06-22T22:00:00-07:00",
-      "to": "2026-06-22T20:00:00-07:00",
-      "newLocalTime": "Rio 00:00-01:00 on Jun 23",
-      "reason": "Original is Rio 02:00-03:00. Moving it two hours earlier avoids the too-late zone while keeping the same date."
+      "to": "2026-06-22T18:20:00-07:00",
+      "newLocalTime": "Rio 22:20-23:20 on Jun 22",
+      "newParticipantTime": "China 09:20-10:20 on Jun 23",
+      "reason": "Original is Rio 02:00-03:00. Moving to Rio late evening keeps Steve before 23:30 and works well for Haoqing in China morning."
+    },
+    {
+      "id": "proposal-move-when2buy-20260622",
+      "priority": "medium",
+      "eventId": "meeting-when2buy-20260622",
+      "eventTitle": "When2Buy Progress Tracking",
+      "action": "reschedule",
+      "from": "2026-06-22T21:00:00-07:00",
+      "to": "2026-06-22T17:30:00-07:00",
+      "newLocalTime": "Rio 21:30-22:15 on Jun 22",
+      "newParticipantTime": "China 08:30-09:15 on Jun 23",
+      "reason": "Original is Rio 01:00-01:45. Moving to Rio 21:30 keeps Steve in a normal evening window and leaves room for Haoqing right after."
     },
     {
       "id": "proposal-merge-paw-20260623",
@@ -361,15 +387,40 @@
       "reason": "This overlaps Steve / Wei / Suwandi / Dennis at Rio 00:00-01:00. Minimal-change option is to treat one as duplicate and keep one call."
     },
     {
+      "id": "proposal-move-dennis-20260623",
+      "priority": "medium",
+      "eventId": "meeting-dennis-20260623",
+      "eventTitle": "Steve / Wei / Suwandi / Dennis",
+      "action": "reschedule",
+      "from": "2026-06-23T20:00:00-07:00",
+      "to": "2026-06-23T18:20:00-07:00",
+      "newLocalTime": "Rio 22:20-23:25 on Jun 23",
+      "newParticipantTime": "China 09:20-10:25 on Jun 24",
+      "reason": "Original is Rio 00:00-01:05 and overlaps PAW. Moving the shared block earlier keeps Steve before 23:30 and is a good China morning slot."
+    },
+    {
+      "id": "proposal-move-hui-20260623",
+      "priority": "low",
+      "eventId": "meeting-hui-20260623",
+      "eventTitle": "Sync Steve <> Hui",
+      "action": "reschedule",
+      "from": "2026-06-23T19:00:00-07:00",
+      "to": "2026-06-23T17:35:00-07:00",
+      "newLocalTime": "Rio 21:35-22:20 on Jun 23",
+      "newParticipantTime": "China 08:35-09:20 on Jun 24",
+      "reason": "Original ends at Rio 23:45. This move keeps it inside the preferred window and places it before the PAW/Dennis block."
+    },
+    {
       "id": "proposal-move-tech-sync-20260623",
       "priority": "medium",
       "eventId": "meeting-aitist-tech-20260623",
       "eventTitle": "Aitist Tech Sync",
       "action": "reschedule",
       "from": "2026-06-23T22:00:00-07:00",
-      "to": "2026-06-23T21:10:00-07:00",
-      "newLocalTime": "Rio 01:10-01:40 on Jun 24",
-      "reason": "Original is Rio 02:00-02:30. Moving right after the Dennis/PAW block reduces lateness without changing the day."
+      "to": "2026-06-23T17:00:00-07:00",
+      "newLocalTime": "Rio 21:00-21:30 on Jun 23",
+      "newParticipantTime": "China 08:00-08:30 on Jun 24",
+      "reason": "Original is Rio 02:00-02:30. Moving it before Hui and the PAW/Dennis block puts Steve in a comfortable evening slot and China participants at the start of the workday."
     },
     {
       "id": "proposal-move-dennis-20260625",
@@ -378,9 +429,10 @@
       "eventTitle": "Steve / Wei / Suwandi / Dennis",
       "action": "reschedule",
       "from": "2026-06-25T20:00:00-07:00",
-      "to": "2026-06-26T20:00:00-07:00",
-      "newLocalTime": "Shanghai 11:00-12:05 on Jun 27",
-      "reason": "Original is during ADD-PVG flight. Moving to the same PT hour one day later lands in a normal Shanghai late morning slot."
+      "to": "2026-06-26T18:00:00-07:00",
+      "newLocalTime": "Shanghai 09:00-10:05 on Jun 27",
+      "newParticipantTime": "China 09:00-10:05 on Jun 27",
+      "reason": "Original is during ADD-PVG flight. Moving to Saturday morning Shanghai time is more natural than preserving the old PT evening hour."
     },
     {
       "id": "proposal-skip-paw-20260625",
@@ -400,9 +452,10 @@
       "eventTitle": "sync haoqing2",
       "action": "reschedule",
       "from": "2026-06-25T22:00:00-07:00",
-      "to": "2026-06-26T21:05:00-07:00",
-      "newLocalTime": "Shanghai 12:05-13:05 on Jun 27",
-      "reason": "Original is during ADD-PVG flight. Proposed slot follows the moved Dennis block and avoids the 22:00 PT Aitist Weekly."
+      "to": "2026-06-26T19:10:00-07:00",
+      "newLocalTime": "Shanghai 10:10-11:10 on Jun 27",
+      "newParticipantTime": "China 10:10-11:10 on Jun 27",
+      "reason": "Original is during ADD-PVG flight. Proposed slot follows the moved Dennis block and keeps Haoqing in a normal China morning slot."
     },
     {
       "id": "proposal-move-dennis-shanghai-20260626",

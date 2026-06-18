@@ -116,12 +116,19 @@ function renderTimeFocus() {
       place: "Shanghai",
       offset: "UTC+8",
       note: "Use after PVG arrival"
+    },
+    {
+      label: "Participants",
+      date: "Many PAW / Haoqing / Aitist calls",
+      place: "China time",
+      offset: "UTC+8",
+      note: "Prefer Beijing morning when Steve is in South America"
     }
   ];
 
   timeFocusContainer.innerHTML = zones
     .map((zone) => `
-      <article class="time-zone-card ${zone.label === "Brazil" || zone.label === "Argentina" ? "primary-zone" : ""}">
+      <article class="time-zone-card ${["Brazil", "Argentina", "Participants"].includes(zone.label) ? "primary-zone" : ""}">
         <span>${escapeHtml(zone.label)}</span>
         <strong>${escapeHtml(zone.place)}</strong>
         <div>${escapeHtml(zone.date)} · ${escapeHtml(zone.offset)}</div>
@@ -132,7 +139,8 @@ function renderTimeFocus() {
 }
 
 function renderProposals() {
-  proposalsContainer.innerHTML = state.schedule.proposals
+  proposalsContainer.innerHTML = [...state.schedule.proposals]
+    .sort((a, b) => new Date(a.to || a.from) - new Date(b.to || b.from))
     .map((proposal) => {
       const priority = proposal.priority || "medium";
       const sourceEvent = state.schedule.meetings.find((event) => event.id === proposal.eventId);
@@ -336,7 +344,9 @@ function addProposal(proposal) {
 }
 
 function addAllProposals() {
-  state.schedule.proposals.forEach(addProposal);
+  [...state.schedule.proposals]
+    .sort((a, b) => new Date(a.to || a.from) - new Date(b.to || b.from))
+    .forEach(addProposal);
 }
 
 function renderAdjustments() {
@@ -400,6 +410,12 @@ function renderProposalTime(proposal, sourceEvent) {
         <span>Proposal</span>
         <strong>${escapeHtml(formatProposalTo(proposal))}</strong>
       </div>
+      ${proposal.newParticipantTime ? `
+        <div>
+          <span>China participants</span>
+          <strong>${escapeHtml(proposal.newParticipantTime)}</strong>
+        </div>
+      ` : ""}
     </div>
   `;
 }
