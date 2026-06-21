@@ -289,12 +289,12 @@
     {
       "id": "meeting-dennis-shanghai-20260626",
       "type": "meeting",
-      "title": "Dennis in Shanghai | afternoon",
-      "startPT": "2026-06-26T14:00:00-07:00",
-      "endPT": "2026-06-26T15:00:00-07:00",
-      "localTimeLabel": "Shanghai 05:00-06:00 on Jun 27",
-      "risk": "early",
-      "recommendation": "too early; consider moving"
+      "title": "Lunch with Dennis in Shanghai",
+      "startPT": "2026-06-26T21:00:00-07:00",
+      "endPT": "2026-06-26T23:00:00-07:00",
+      "localTimeLabel": "Shanghai 12:00-14:00 on Jun 27",
+      "risk": "overlap",
+      "recommendation": "confirmed lunch window; overlaps Aitist Weekly at Shanghai 13:00-13:30"
     },
     {
       "id": "meeting-aitist-weekly-20260626",
@@ -303,8 +303,8 @@
       "startPT": "2026-06-26T22:00:00-07:00",
       "endPT": "2026-06-26T22:30:00-07:00",
       "localTimeLabel": "Shanghai 13:00-13:30 on Jun 27",
-      "risk": "low",
-      "recommendation": "keep"
+      "risk": "overlap",
+      "recommendation": "overlaps Dennis lunch; keep only if Steve can briefly step out or move the weekly"
     },
     {
       "id": "meeting-dennis-shanghai-20260627",
@@ -434,10 +434,10 @@
       "eventTitle": "PAW / Dennis shared meeting",
       "action": "reschedule",
       "from": "2026-06-25T20:00:00-07:00",
-      "to": "2026-06-26T18:00:00-07:00",
-      "newLocalTime": "Shanghai 09:00-10:05 on Jun 27",
-      "newParticipantTime": "China 09:00-10:05 on Jun 27",
-      "reason": "Original is during ADD-PVG flight. Move both PAW/Dennis calendar copies to the same Saturday morning Shanghai slot so this shared meeting stays in one place."
+      "to": "TBD",
+      "newLocalTime": "Preferred choices: Shanghai 20:00-21:05 on Jun 26, 20:30-21:35 on Jun 26, 14:30-15:35 on Jun 27, or 15:45-16:50 on Jun 27",
+      "newParticipantTime": "China/HK same as Shanghai; PT is 05:00/05:30 on Jun 26 or 23:30 Jun 26 / 00:45 Jun 27",
+      "reason": "Original is during ADD-PVG flight. Steve has lunch with Dennis at Shanghai 12:00-14:00 on Jun 27, so PAW should be after lunch or on Jun 26 evening after PVG arrival."
     },
     {
       "id": "proposal-move-paw-copy-20260625",
@@ -446,10 +446,10 @@
       "eventTitle": "PAW / Dennis shared meeting copy",
       "action": "reschedule",
       "from": "2026-06-25T20:00:00-07:00",
-      "to": "2026-06-26T18:00:00-07:00",
-      "newLocalTime": "Shanghai 09:00-10:00 on Jun 27",
-      "newParticipantTime": "China 09:00-10:00 on Jun 27",
-      "reason": "This is the PAW calendar copy of the same shared meeting. Move it together with the Dennis copy instead of skipping one and moving the other."
+      "to": "TBD",
+      "newLocalTime": "Same choices as the Dennis PAW copy: Shanghai 20:00-21:00 or 20:30-21:30 on Jun 26; 14:30-15:30 or 15:45-16:45 on Jun 27",
+      "newParticipantTime": "China/HK same as Shanghai",
+      "reason": "This is the PAW calendar copy of the same shared meeting. Move it together with the Dennis copy after the group picks one slot."
     },
     {
       "id": "proposal-move-haoqing2-20260625",
@@ -467,12 +467,12 @@
       "id": "proposal-move-dennis-shanghai-20260626",
       "priority": "medium",
       "eventId": "meeting-dennis-shanghai-20260626",
-      "eventTitle": "Dennis in Shanghai | afternoon",
-      "action": "reschedule",
+      "eventTitle": "Lunch with Dennis in Shanghai",
+      "action": "done",
       "from": "2026-06-26T14:00:00-07:00",
-      "to": "2026-06-26T23:00:00-07:00",
-      "newLocalTime": "Shanghai 14:00-15:00 on Jun 27",
-      "reason": "Original is Shanghai 05:00-06:00. Proposed slot matches the event title and keeps the meeting in Shanghai afternoon."
+      "to": "2026-06-26T21:00:00-07:00",
+      "newLocalTime": "Shanghai 12:00-14:00 on Jun 27",
+      "reason": "Updated on live Google Calendar per Steve request. Note this overlaps Aitist Weekly at Shanghai 13:00-13:30."
     }
   ],
   "playWindows": [

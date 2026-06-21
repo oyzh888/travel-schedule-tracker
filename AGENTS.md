@@ -64,6 +64,10 @@ As of 2026-06-21:
   - Beijing/HK: 2026-06-24 08:00-08:30.
 - Sync Steve <-> Hui is 2026-06-23 17:35-18:15 PT:
   - Rio: 2026-06-23 21:35-22:15.
+- 2026-06-25 PAW/Dennis and `sync haoqing2` still overlap the ADD -> PVG flight and need rescheduling.
+- Dennis lunch in Shanghai is set for 2026-06-27 12:00-14:00 Shanghai time.
+  - This overlaps `爱乐尔科技 周会` at 2026-06-27 13:00-13:30 Shanghai time.
+  - A second `Dennis in Shanghai |afternoon` event remains on the calendar at 2026-06-28 05:00-06:00 Shanghai time and is likely a duplicate unless Steve says otherwise.
 
 ## Near-Term Trip Logic
 
@@ -75,6 +79,8 @@ As of 2026-06-21:
   - `ET684` ADD T2 23:30 -> PVG T2 15:15 on 2026-06-26.
   - ADD layover is 3h45. Do not recommend leaving the airport; use International Transfer and video call if meeting a friend.
   - Trip.com says no need to collect and re-check baggage during the ADD transfer; confirm checked-bag tag says PVG at GRU.
+- 2026-06-26 Shanghai: Steve lands PVG at 15:15. For PAW, prefer evening slots after immigration/hotel buffer, such as Shanghai 20:00-21:00 or 20:30-21:30.
+- 2026-06-27 Shanghai: Steve has lunch with Dennis 12:00-14:00. For PAW after lunch, prefer Shanghai 14:30-15:30 or 15:45-16:45.
 
 ## Scheduling Rules
 
