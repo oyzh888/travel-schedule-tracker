@@ -14,13 +14,13 @@
       "date": "2026-06-26",
       "city": "Shanghai",
       "status": "arrival",
-      "notes": "Land at PVG in the afternoon. Keep evening light because this follows GRU-ADD-PVG long-haul travel."
+      "notes": "Land at PVG in the afternoon. Keep evening light because this follows GRU-ADD-PVG long-haul travel. For this one-night Shanghai stay, prefer Qiantan/Houtan/New Bund rather than PVG airport or Hongqiao, because it balances PVG arrival, the next-day SK Tower lunch, and Hongqiao rail departure to Hangzhou."
     },
     {
       "date": "2026-06-27",
       "city": "Shanghai",
       "status": "city day",
-      "notes": "Meetings currently proposed for morning and early afternoon China time."
+      "notes": "Aitist Weekly is moved to 08:30-09:00 Shanghai time. Lunch with Dennis is 12:00-14:00 near SK Tower / Houtan. After lunch, Steve plans to take high-speed rail to Hangzhou, likely from Shanghai Hongqiao unless ticket choice says otherwise."
     },
     {
       "date": "2026-06-28",
@@ -97,6 +97,23 @@
       "packingImpact": "Do not pack only summer clothes. Bring real long sleeves plus a warm layer that also works on long flights."
     }
   ],
+  "lodgingPlan": {
+    "shanghai20260626": {
+      "recommendedArea": "Qiantan / Houtan / New Bund",
+      "reason": "This area is a practical midpoint for PVG arrival on Jun 26, lunch at SK Tower / Houtan on Jun 27, and then a taxi to Shanghai Hongqiao Railway Station for Hangzhou high-speed rail.",
+      "primaryPick": "Shangri-La Qiantan, Shanghai",
+      "primaryReason": "Comfortable high-end choice near Qiantan Taikoo Li and Oriental Sports Center, with official hotel guidance saying both PVG and Hongqiao are about 30-40 minutes by car.",
+      "alternatives": [
+        "Kimpton Qiantan Shanghai by IHG - stylish/luxury Qiantan option if Steve wants IHG and a newer design hotel.",
+        "The Shang by Artyzen Qiantan Shanghai - comfortable and likely simpler/cheaper than Shangri-La; useful if Steve wants a clean stay with laundry/shared-space convenience.",
+        "JI Hotel Shanghai Houtan Subway Station - practical budget/convenience option very close to Houtan/SK area, but less comfortable than Qiantan luxury hotels."
+      ],
+      "avoid": [
+        "PVG airport hotel unless Steve arrives exhausted and wants zero evening movement; it makes the SK lunch and Hongqiao rail leg worse.",
+        "Hongqiao hotel unless the Hangzhou train is very early; it makes PVG arrival and SK lunch cross-city moves heavier."
+      ]
+    }
+  },
   "packingPlan": {
     "strategy": "Pack for three realities: cold/cool South America nights, rainy Rio/South China, and hot humid China city hopping. Keep documents and electronics in carry-on; use one laundry round instead of overpacking.",
     "baseline": [

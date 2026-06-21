@@ -293,18 +293,18 @@
       "startPT": "2026-06-26T21:00:00-07:00",
       "endPT": "2026-06-26T23:00:00-07:00",
       "localTimeLabel": "Shanghai 12:00-14:00 on Jun 27",
-      "risk": "overlap",
-      "recommendation": "confirmed lunch window; overlaps Aitist Weekly at Shanghai 13:00-13:30"
+      "risk": "low",
+      "recommendation": "confirmed lunch window; Aitist Weekly has been moved earlier to avoid this lunch"
     },
     {
       "id": "meeting-aitist-weekly-20260626",
       "type": "meeting",
       "title": "Aitist Weekly",
-      "startPT": "2026-06-26T22:00:00-07:00",
-      "endPT": "2026-06-26T22:30:00-07:00",
-      "localTimeLabel": "Shanghai 13:00-13:30 on Jun 27",
-      "risk": "overlap",
-      "recommendation": "overlaps Dennis lunch; keep only if Steve can briefly step out or move the weekly"
+      "startPT": "2026-06-26T17:30:00-07:00",
+      "endPT": "2026-06-26T18:00:00-07:00",
+      "localTimeLabel": "Shanghai 08:30-09:00 on Jun 27",
+      "risk": "low",
+      "recommendation": "moved earlier per Steve request to avoid Dennis lunch"
     },
     {
       "id": "meeting-dennis-shanghai-20260627",
@@ -435,9 +435,9 @@
       "action": "reschedule",
       "from": "2026-06-25T20:00:00-07:00",
       "to": "TBD",
-      "newLocalTime": "Preferred choices: Shanghai 20:00-21:05 on Jun 26, 20:30-21:35 on Jun 26, 14:30-15:35 on Jun 27, or 15:45-16:50 on Jun 27",
-      "newParticipantTime": "China/HK same as Shanghai; PT is 05:00/05:30 on Jun 26 or 23:30 Jun 26 / 00:45 Jun 27",
-      "reason": "Original is during ADD-PVG flight. Steve has lunch with Dennis at Shanghai 12:00-14:00 on Jun 27, so PAW should be after lunch or on Jun 26 evening after PVG arrival."
+      "newLocalTime": "Preferred choices: Shanghai 17:30-18:35, 18:30-19:35, or 19:30-20:35 on Jun 26; 14:30-15:35 or 15:45-16:50 on Jun 27",
+      "newParticipantTime": "China/HK same as Shanghai; PT is 02:30/03:30/04:30 on Jun 26 or 23:30 Jun 26 / 00:45 Jun 27",
+      "reason": "Original is during ADD-PVG flight. Steve can take a call soon after landing if the group wants an earlier Jun 26 slot; Jun 27 should stay after the 12:00-14:00 Dennis lunch."
     },
     {
       "id": "proposal-move-paw-copy-20260625",
@@ -447,7 +447,7 @@
       "action": "reschedule",
       "from": "2026-06-25T20:00:00-07:00",
       "to": "TBD",
-      "newLocalTime": "Same choices as the Dennis PAW copy: Shanghai 20:00-21:00 or 20:30-21:30 on Jun 26; 14:30-15:30 or 15:45-16:45 on Jun 27",
+      "newLocalTime": "Same choices as the Dennis PAW copy: Shanghai 17:30-18:30, 18:30-19:30, or 19:30-20:30 on Jun 26; 14:30-15:30 or 15:45-16:45 on Jun 27",
       "newParticipantTime": "China/HK same as Shanghai",
       "reason": "This is the PAW calendar copy of the same shared meeting. Move it together with the Dennis copy after the group picks one slot."
     },
@@ -472,7 +472,7 @@
       "from": "2026-06-26T14:00:00-07:00",
       "to": "2026-06-26T21:00:00-07:00",
       "newLocalTime": "Shanghai 12:00-14:00 on Jun 27",
-      "reason": "Updated on live Google Calendar per Steve request. Note this overlaps Aitist Weekly at Shanghai 13:00-13:30."
+      "reason": "Updated on live Google Calendar per Steve request. Aitist Weekly has been moved earlier to Shanghai 08:30-09:00."
     }
   ],
   "playWindows": [
