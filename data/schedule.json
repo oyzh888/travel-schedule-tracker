@@ -315,6 +315,16 @@
       "localTimeLabel": "Shanghai 05:00-06:00 on Jun 28",
       "risk": "early",
       "recommendation": "too early if included in scope"
+    },
+    {
+      "id": "dinner-wuqingji-beijing-20260630",
+      "type": "meeting",
+      "title": "Dinner in Beijing with Wu Qingji group",
+      "startPT": "2026-06-30T03:00:00-07:00",
+      "endPT": "2026-06-30T05:30:00-07:00",
+      "localTimeLabel": "Beijing 18:00-20:30 on Jun 30",
+      "risk": "low",
+      "recommendation": "keep; blocks Beijing dinner time"
     }
   ],
   "proposals": [

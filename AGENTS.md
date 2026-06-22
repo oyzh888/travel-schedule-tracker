@@ -82,6 +82,7 @@ As of 2026-06-21:
 - 2026-06-26 Shanghai: Steve lands PVG at 15:15. For PAW, include earlier post-landing options if the group wants them: Shanghai 17:30-18:30, 18:30-19:30, 19:30-20:30, plus later backups.
 - 2026-06-27 Shanghai: Steve has lunch with Dennis 12:00-14:00. For PAW after lunch, prefer Shanghai 14:30-15:30 or 15:45-16:45.
 - Shanghai lodging recommendation: assume "KS" means Shanghai SK Tower near Houtan/New Bund. Prefer Qiantan/Houtan/New Bund hotels for one night, especially Shangri-La Qiantan if Steve wants comfort; this balances PVG arrival, SK Tower lunch, and Hongqiao railway to Hangzhou.
+- 2026-06-30 Beijing: dinner with Wu Qingji group is on Steve's calendar 18:00-20:30 Beijing time. Keep this evening blocked.
 
 ## Scheduling Rules
 
